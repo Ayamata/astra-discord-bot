@@ -26,7 +26,7 @@ export default {
 
     async execute(interaction) {
         const amount =
-            interaction.options.getInteger();
+            interaction.options.getInteger("amount");
 
         if (!interaction.channel.isTextBased()) {
             return interaction.reply({
