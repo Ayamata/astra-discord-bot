@@ -20,11 +20,11 @@ export default {
                     name: config.bot.status,
 
                     type:
-                        ActivityType.Watching
+                        ActivityType.Streaming
                 }
             ],
 
-            status: "online"
+            status: "streaming"
         });
     }
 };

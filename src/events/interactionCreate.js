@@ -7,11 +7,26 @@ import {
     handleTicketButton
 } from "../utils/tickets.js";
 
+import {
+    isApplicationButton,
+    handleApplicationButton
+} from "../utils/applications.js";
+
 export default {
     name: Events.InteractionCreate,
 
-    async execute(interaction, client) {
+    async execute(
+        interaction,
+        client
+    ) {
         try {
+
+            /*
+             * =====================================
+             * SLASH COMMANDS
+             * =====================================
+             */
+
             if (
                 interaction.isChatInputCommand()
             ) {
@@ -20,7 +35,9 @@ export default {
                         interaction.commandName
                     );
 
-                if (!command) return;
+                if (!command) {
+                    return;
+                }
 
                 await command.execute(
                     interaction
@@ -29,9 +46,36 @@ export default {
                 return;
             }
 
+            /*
+             * =====================================
+             * BUTTONS
+             * =====================================
+             */
+
             if (
                 interaction.isButton()
             ) {
+
+                /*
+                 * APPLICATION BUTTONS
+                 */
+
+                if (
+                    isApplicationButton(
+                        interaction
+                    )
+                ) {
+                    await handleApplicationButton(
+                        interaction
+                    );
+
+                    return;
+                }
+
+                /*
+                 * TICKET CREATION
+                 */
+
                 if (
                     interaction.customId ===
                     "ticket_create"
@@ -43,17 +87,24 @@ export default {
                     return;
                 }
 
+                /*
+                 * TICKET CONTROLS
+                 */
+
                 if (
                     interaction.customId ===
-                    "ticket_claim" ||
+                        "ticket_claim" ||
                     interaction.customId ===
-                    "ticket_close"
+                        "ticket_close"
                 ) {
                     await handleTicketButton(
                         interaction
                     );
+
+                    return;
                 }
             }
+
         } catch (error) {
             console.error(
                 "Interaction error:",
@@ -62,19 +113,26 @@ export default {
 
             const response = {
                 content:
-                    "Something went wrong while processing that action.",
+                    "❌ Something went wrong while processing that action.",
+
                 ephemeral: true
             };
 
-            if (interaction.replied ||
-                interaction.deferred) {
-                await interaction.followUp(
-                    response
-                ).catch(() => {});
+            if (
+                interaction.replied ||
+                interaction.deferred
+            ) {
+                await interaction
+                    .followUp(
+                        response
+                    )
+                    .catch(() => {});
             } else {
-                await interaction.reply(
-                    response
-                ).catch(() => {});
+                await interaction
+                    .reply(
+                        response
+                    )
+                    .catch(() => {});
             }
         }
     }

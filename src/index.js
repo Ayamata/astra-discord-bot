@@ -21,11 +21,15 @@ const client =
             GatewayIntentBits.Guilds,
             GatewayIntentBits.GuildMembers,
             GatewayIntentBits.GuildMessages,
+
+            GatewayIntentBits.DirectMessages,
+
             GatewayIntentBits.MessageContent
         ],
 
         partials: [
             Partials.Channel,
+
             Partials.Message,
             Partials.User
         ]
