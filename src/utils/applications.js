@@ -25,7 +25,7 @@ const APPLICATION_INTERVIEW_ID =
     "application_interview";
 
 const CANCEL_TEXT =
-    "cancel";
+    "CANCEL";
 
 /*
  * ============================================================
@@ -33,55 +33,106 @@ const CANCEL_TEXT =
  * ============================================================
  */
 
-export function createApplicationPanel() {
-    const embed =
-        new EmbedBuilder()
-            .setColor(
-                config.applications.panelColor
-            )
-            .setTitle("Staff Applications")
-            .setDescription(
-                [
-                    "Interested in joining the staff team?",
-                    "",
-                    "Click the button below to start your application.",
-                    "",
-                    "The application will take place through **DMs**.",
-                    "You will receive one question at a time.",
-                    "",
-                    `You have **${Math.floor(
-                        config.applications.questionTimeout / 60000
-                    )} minutes** to answer each question.`,
-                    "",
-                    `Type \`${CANCEL_TEXT}\` at any time to cancel.`
-                ].join("\n")
-            )
-            .setFooter({
-                text:
-                    "Staff Application System"
-            })
-            .setTimestamp();
+export function createApplicationPanel(value) {
+    if (value == "staff") {
+        const embed =
+            new EmbedBuilder()
+                .setColor(
+                    config.applications.panelColor
+                )
+                .setTitle("Staff Applications")
+                .setDescription(
+                    [
+                        "Interested in joining the staff team?",
+                        "",
+                        "Click the button below to start your application.",
+                        "",
+                        "The application will take place through **DMs**.",
+                        "You will receive one question at a time.",
+                        "",
+                        `You have **${Math.floor(
+                            config.applications.questionTimeout / 60000
+                        )} minutes** to answer each question.`,
+                        "",
+                        `Type \`${CANCEL_TEXT}\` at any time to cancel.`
+                    ].join("\n")
+                )
+                .setFooter({
+                    text:
+                        "Staff Application System"
+                })
+                .setTimestamp();
 
-    const row =
-        new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder()
-                    .setCustomId(
-                        APPLICATION_BUTTON_ID
-                    )
-                    .setLabel(
-                        "Start Application"
-                    )
-                    .setEmoji("📝")
-                    .setStyle(
-                        ButtonStyle.Primary
-                    )
-            );
+        const row =
+            new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(
+                            APPLICATION_BUTTON_ID_STAFF
+                        )
+                        .setLabel(
+                            "Start Application"
+                        )
+                        .setEmoji("📝")
+                        .setStyle(
+                            ButtonStyle.Primary
+                        )
+                );
 
-    return {
-        embeds: [embed],
-        components: [row]
-    };
+        return {
+            embeds: [embed],
+            components: [row]
+        };
+    } else if (value == "test") {
+        const embed =
+            new EmbedBuilder()
+                .setColor(
+                    config.applications.panelColor
+                )
+                .setTitle("Staff Applications")
+                .setDescription(
+                    [
+                        "This is a TEST APPLICATION",
+                        "",
+                        "Click the button below to start your application.",
+                        "",
+                        "The application will take place through **DMs**.",
+                        "You will receive one question at a time.",
+                        "",
+                        `You have **${Math.floor(
+                            config.applications.questionTimeout / 60000
+                        )} minutes** to answer each question.`,
+                        "",
+                        `Type \`${CANCEL_TEXT}\` at any time to cancel.`
+                    ].join("\n")
+                )
+                .setFooter({
+                    text:
+                        "TEST APPLICATION System"
+                })
+                .setTimestamp();
+
+        const row =
+            new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(
+                            APPLICATION_BUTTON_ID_TEST
+                        )
+                        .setLabel(
+                            "Start Application"
+                        )
+                        .setEmoji("📝")
+                        .setStyle(
+                            ButtonStyle.Primary
+                        )
+                );
+
+        return {
+            embeds: [embed],
+            components: [row]
+        };
+    }
 }
 
 /*
@@ -91,64 +142,116 @@ export function createApplicationPanel() {
  */
 
 export async function startApplication(
-    interaction
+    interaction,
+    value
 ) {
     const user =
         interaction.user;
 
     let dm;
 
-    try {
-        dm =
-            await user.createDM();
+    if (value == "staff") {
+        try {
+            dm =
+                await user.createDM();
 
-        await dm.send({
-            embeds: [
-                new EmbedBuilder()
-                    .setColor(
-                        config.applications.panelColor
-                    )
-                    .setTitle(
-                        "Staff Application"
-                    )
-                    .setDescription(
-                        [
-                            `Hello ${user}!`,
-                            "",
-                            "Welcome to the staff application.",
-                            "",
-                            "Please answer each question with **one message**.",
-                            "",
-                            `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
-                            "",
-                            `You have **${Math.floor(
-                                config.applications.questionTimeout / 60000
-                            )} minutes** to answer each question.`
-                        ].join("\n")
-                    )
-                    .setFooter({
-                        text:
-                            "Staff Application System"
-                    })
-                    .setTimestamp()
-            ]
-        });
+            await dm.send({
+                embeds: [
+                    new EmbedBuilder()
+                        .setColor(
+                            config.applications.panelColor
+                        )
+                        .setTitle(
+                            "Staff Application"
+                        )
+                        .setDescription(
+                            [
+                                `Hello ${user}!`,
+                                "",
+                                "Welcome to the staff application.",
+                                "",
+                                `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
+                                "",
+                                `You have **${Math.floor(
+                                    config.applications.questionTimeout / 60000
+                                )} minutes** to answer each question.`
+                            ].join("\n")
+                        )
+                        .setFooter({
+                            text:
+                                "Staff Application System"
+                        })
+                        .setTimestamp()
+                ]
+            });
 
-    } catch (error) {
-        console.error(
-            "[APPLICATION] Could not open DM:",
-            error
-        );
+        } catch (error) {
+            console.error(
+                "[ APPLICATION ] Could not open DM:",
+                error
+            );
 
-        return interaction.reply({
-            embeds: [
-                errorEmbed(
-                    "Unable to Start Application",
-                    "I couldn't send you a DM. Please enable direct messages from server members and try again."
-                )
-            ],
-            ephemeral: true
-        });
+            return interaction.reply({
+                embeds: [
+                    errorEmbed(
+                        "Unable to Start Application",
+                        "I couldn't send you a DM. Please enable direct messages from server members and try again."
+                    )
+                ],
+                ephemeral: true
+            });
+        }
+    } else if (value == "test") {
+        try {
+            dm =
+                await user.createDM();
+
+            await dm.send({
+                embeds: [
+                    new EmbedBuilder()
+                        .setColor(
+                            config.applications.panelColor
+                        )
+                        .setTitle(
+                            "TEST APPLICATION"
+                        )
+                        .setDescription(
+                            [
+                                `Hello ${user}!`,
+                                "",
+                                "Welcome to the TEST APPLICATION.",
+                                "",
+                                `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
+                                "",
+                                `You have **${Math.floor(
+                                    config.applications.questionTimeout / 60000
+                                )} minutes** to answer each question.`
+                            ].join("\n")
+                        )
+                        .setFooter({
+                            text:
+                                "TEST APPLICATION System"
+                        })
+                        .setTimestamp()
+                ]
+            });
+
+        } catch (error) {
+            console.error(
+                "[ APPLICATION ] Could not open DM:",
+                error
+            );
+
+            return interaction.reply({
+                embeds: [
+                    errorEmbed(
+                        "Unable to Start Application",
+                        "I couldn't send you a DM. Please enable direct messages from server members and try again."
+                    )
+                ],
+                ephemeral: true
+            });
+        }
     }
 
     await interaction.reply({
@@ -170,16 +273,16 @@ export async function startApplication(
     for (
         let index = 0;
         index <
-        config.applications.questions.length;
+        config.applications.questions_staff.length;
         index++
     ) {
         const question =
-            config.applications.questions[
+            config.applications.questions_staff[
                 index
             ];
 
         const total =
-            config.applications.questions.length;
+            config.applications.questions_staff.length;
 
         await dm.send({
             embeds: [
@@ -454,7 +557,7 @@ async function submitApplication(
         index++
     ) {
         const question =
-            config.applications.questions[
+            config.applications.questions_staff[
                 index
             ];
 
@@ -700,10 +803,21 @@ export async function handleApplicationButton(
 
     if (
         action ===
-        APPLICATION_BUTTON_ID
+        APPLICATION_BUTTON_ID_STAFF
     ) {
         await startApplication(
-            interaction
+            interaction,
+            "staff"
+        );
+
+        return;
+    } else if (
+        action ===
+        APPLICATION_BUTTON_ID_TEST
+    ) {
+        await startApplication(
+            interaction,
+            "test"
         );
 
         return;

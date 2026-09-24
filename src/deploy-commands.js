@@ -48,7 +48,10 @@ async function walk(directory) {
                 `file://${fullPath}`
             );
 
-        if (command.default?.data) {
+        if (
+            command.default?.data &&
+            typeof command.default.data.toJSON === "function"
+        ) {
             commands.push(
                 command.default.data.toJSON()
             );

@@ -1,7 +1,7 @@
 {
-  "name": "custom-discord-bot",
-  "version": "1.0.0",
-  "description": "Custom Discord moderation and ticket bot",
+  "name": "astra-discord-bot",
+  "version": "1.0.2",
+  "description": "ASTRA-CLIENT-LAUNCHER-DISCORD-CUSTOM-BOT",
   "type": "module",
   "main": "src/index.js",
   "scripts": {

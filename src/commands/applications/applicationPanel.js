@@ -19,9 +19,17 @@ export default {
         )
         .setDefaultMemberPermissions(
             PermissionFlagsBits.ManageGuild
+        )
+        .addStringOption(value =>
+            value
+                .setName("application")
+                .setDescription("If the Application String matches an existing one it will send it in that channel.")
+                .setRequired(true)
         ),
 
     async execute(interaction) {
+        const value = 
+            interaction.options.getString("application")
         if (!config.applications.enabled) {
             return interaction.reply({
                 content:
@@ -30,15 +38,27 @@ export default {
             });
         }
 
-        await interaction.channel.send(
-            createApplicationPanel()
-        );
+        if (value == "staff") {
+            await interaction.channel.send(
+                createApplicationPanel(value)
+            );
 
-        return interaction.reply({
-            content:
+            return interaction.reply({
+                content:
                 "✅ Staff application panel sent.",
-            ephemeral: true
-        });
+                ephemeral: true
+            });
+        } else if (value == "test") {
+            await interaction.channel.send(
+                createApplicationPanel(value)
+            );
+
+            return interaction.reply({
+                content:
+                "✅ Test application panel sent.",
+                ephemeral: true
+            });
+        }
     },
 
     async prefixExecute({

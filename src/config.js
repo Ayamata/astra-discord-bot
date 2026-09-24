@@ -1,25 +1,30 @@
 export default {
     bot: {
-        status: "In Development",
+        status: "Online",
         activityType: "WATCHING",
-        prefix: "+"
+        prefix: ">"
     },
+    presence: {
+        apiUrl:
+            "https://astra-presence.impartial-peacock.workers.dev/v1/online",
 
+        updateInterval:
+            60_000
+    },
     moderation: {
-        moderatorRoleId: "",
-        logChannelId: "",
+        moderatorRoleId: "1552206316540534814",
+        logChannelId: "1551655533185077279",
         dmUsers: true,
-        maxWarnings: 5,
+        maxWarnings: 3,
         autoTimeoutAfterWarnings: true,
         autoTimeoutDuration: 60 * 60 * 1000,
         deleteCommandMessages: false
     },
-
     tickets: {
         enabled: true,
         supportRoleId: "1551911590536937523",
         categoryId: "1551980883488145438",
-        logChannelId: "https://discord.com/api/webhooks/1551975698535546931/a4MtBO7uomL46udO1hdo84I-NKRQEDT-XqbDKH2M19DajVy3YfUSVUB_UMQejXuwKZ1d",
+        logChannelId: "1551975698535546931",
         transcriptChannelId: "",
         maximumOpenTickets: 2,
         nameFormat: "ticket-{username}",
@@ -28,7 +33,6 @@ export default {
         deleteAfterClose: false,
         ticketColor: 0x5865F2
     },
-
     applications: {
         enabled: true,
         channelId: "1551983074361741443",
@@ -36,7 +40,7 @@ export default {
         applicationColor: 0x00FF7F,
         questionTimeout: 5 * 60 * 1000,
         command: "applicationmessage",
-        questions: [
+        questions_staff: [
             "What is your timezone?",
             "How active are you on this server? (hours per day / week)",
             "Why do you want to join the staff team?",
@@ -47,7 +51,21 @@ export default {
             "How long have you been in this server and how did you find it?"
         ]
     },
+    tools: {
+        authorizedUserIds: [
+            "813018037632237568",
+            "797752390680838174"
+        ],
 
+        /*
+        * Directory containing the Git repository.
+        *
+        * Example:
+        * "C:/Users/USER/Desktop/astra-discord-bot"
+        */
+        gitWorkingDirectory:
+            "C:/Users/vtkvi/Desktop/astra-discord-bot"
+    },
     embeds: {
         color: 0x5865F2,
         errorColor: 0xED4245,

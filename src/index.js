@@ -1,5 +1,7 @@
 import "dotenv/config";
 
+import "./utils/consoleLogger.js";
+
 import {
     Client,
     Collection,
