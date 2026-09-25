@@ -17,6 +17,10 @@ export async function loadEvents(client) {
             "../events"
         );
 
+    console.log(
+        `[EVENTS] Loading events from: ${eventsPath}`
+    );
+
     const files =
         fs.readdirSync(eventsPath)
             .filter(file =>
@@ -24,33 +28,59 @@ export async function loadEvents(client) {
             );
 
     for (const file of files) {
-        const event =
-            await import(
-                `file://${path.join(
-                    eventsPath,
-                    file
-                )}`
-            );
+        try {
+            const event =
+                await import(
+                    `file://${path.join(
+                        eventsPath,
+                        file
+                    )}`
+                );
 
-        if (!event.default) continue;
+            if (!event.default) {
+                console.warn(
+                    `[EVENTS] No default export: ${file}`
+                );
+                continue;
+            }
 
-        if (event.default.once) {
-            client.once(
-                event.default.name,
-                (...args) =>
-                    event.default.execute(
-                        ...args,
-                        client
-                    )
+            const eventName =
+                event.default.name;
+
+            if (!eventName) {
+                console.warn(
+                    `[EVENTS] No event name: ${file}`
+                );
+                continue;
+            }
+
+            if (event.default.once) {
+                client.once(
+                    eventName,
+                    (...args) =>
+                        event.default.execute(
+                            ...args,
+                            client
+                        )
+                );
+            } else {
+                client.on(
+                    eventName,
+                    (...args) =>
+                        event.default.execute(
+                            ...args,
+                            client
+                        )
+                );
+            }
+
+            console.log(
+                `[EVENTS] Loaded ${file} → ${eventName}`
             );
-        } else {
-            client.on(
-                event.default.name,
-                (...args) =>
-                    event.default.execute(
-                        ...args,
-                        client
-                    )
+        } catch (error) {
+            console.error(
+                `[EVENTS] Failed to load ${file}:`,
+                error
             );
         }
     }

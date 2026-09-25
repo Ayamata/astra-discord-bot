@@ -63,18 +63,13 @@ export default {
         channelId: "1551983074361741443",
         panelColor: 0x00AEFF,
         applicationColor: 0x00FF7F,
-        questionTimeout: 5 * 60 * 1000,
-        command: "applicationmessage",
-        questions_staff: [
-            "What is your timezone?",
-            "How active are you on this server? (hours per day / week)",
-            "Why do you want to join the staff team?",
-            "What would you do if two people are arguing in chat?",
-            "Do you have any previous staff experience? If yes, where?",
-            "How would you handle a user who keeps breaking rules after multiple warnings?",
-            "What do you think is the most important quality of a staff member?",
-            "How long have you been in this server and how did you find it?"
-        ]
+        questionTimeout: 5 * 60 * 1000
+        /*
+         * Applications themselves (name, description, questions)
+         * are managed in Discord:
+         *   >applicationcreate, >applicationsend,
+         *   >applicationlist, >applicationremove
+         */
     },
     tools: {
         authorizedUserIds: [

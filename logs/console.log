@@ -570,3 +570,412 @@
 [2026-09-25T15:06:04.439Z] [LOG] [PREFIX] amayaiscool used >git
 [2026-09-25T15:06:04.440Z] [LOG] [PREFIX] Found command: YES
 [2026-09-25T15:06:04.440Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T15:06:15.241Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:06:34.219Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T15:06:34.220Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:06:34.220Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T15:06:43.346Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T15:06:43.346Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:06:43.347Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T15:07:15.298Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:08:15.262Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:09:15.278Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:10:15.291Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:11:15.687Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T15:11:15.722Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:11:15.727Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:11:15.731Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:11:15.735Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:11:15.739Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:11:15.744Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:11:15.747Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:11:15.754Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:11:15.761Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:11:15.764Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:11:15.769Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:11:15.773Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:11:15.777Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:11:15.784Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:11:15.788Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:11:15.794Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:11:15.798Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:11:16.699Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:11:16.848Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:12:17.060Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:13:17.005Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:13:43.467Z] [LOG] Registering 14 commands...
+[2026-09-25T15:13:43.803Z] [LOG] Commands registered successfully.
+[2026-09-25T15:13:46.489Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T15:13:46.510Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:13:46.513Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:13:46.516Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:13:46.518Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:13:46.521Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:13:46.524Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:13:46.529Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:13:46.532Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:13:46.535Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:13:46.538Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:13:46.540Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:13:46.542Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:13:46.544Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:13:46.547Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:13:46.549Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:13:46.550Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:13:46.552Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:13:47.797Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:13:47.942Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:14:48.099Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:15:48.080Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:16:48.067Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:16:53.774Z] [LOG] Registering 14 commands...
+[2026-09-25T15:16:54.179Z] [LOG] Commands registered successfully.
+[2026-09-25T15:16:56.526Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T15:16:56.549Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:16:56.551Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:16:56.554Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:16:56.556Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:16:56.558Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:16:56.560Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:16:56.563Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:16:56.566Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:16:56.569Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:16:56.571Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:16:56.575Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:16:56.577Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:16:56.580Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:16:56.583Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:16:56.585Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:16:56.587Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:16:56.590Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:16:56.591Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T15:16:56.600Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T15:16:56.602Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T15:16:56.606Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T15:16:57.839Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:16:57.975Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:17:58.142Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:18:58.080Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:19:58.134Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:20:02.846Z] [LOG] Registering 14 commands...
+[2026-09-25T15:20:03.244Z] [LOG] Commands registered successfully.
+[2026-09-25T15:20:06.187Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T15:20:06.211Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:20:06.214Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:20:06.218Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:20:06.221Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:20:06.224Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:20:06.228Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:20:06.232Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:20:06.234Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:20:06.238Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:20:06.241Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:20:06.245Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:20:06.249Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:20:06.252Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:20:06.255Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:20:06.257Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:20:06.260Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:20:06.262Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:20:06.263Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T15:20:06.268Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T15:20:06.271Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T15:20:06.273Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T15:20:06.275Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T15:20:06.276Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T15:20:07.211Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:20:07.337Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:20:21.066Z] [LOG] [WELCOME] GuildMemberAdd fired for tearplayz
+[2026-09-25T15:20:21.066Z] [LOG] [WELCOME] Enabled: true
+[2026-09-25T15:20:23.297Z] [LOG] [WELCOME] Sent welcome DM to tearplayz
+[2026-09-25T15:21:07.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:22:07.468Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:22:27.875Z] [LOG] [WELCOME] GuildMemberAdd fired for tearplayz
+[2026-09-25T15:22:27.875Z] [LOG] [WELCOME] Enabled: true
+[2026-09-25T15:22:28.408Z] [LOG] [WELCOME] Sent welcome DM to tearplayz
+[2026-09-25T15:22:46.987Z] [ERROR] Interaction error: ReferenceError: APPLICATION_BUTTON_ID_STAFF is not defined
+    at handleApplicationButton (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/utils/applications.js:806:9)
+    at Object.execute (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/events/interactionCreate.js:68:27)
+    at Client.<anonymous> (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/handlers/eventHandler.js:70:39)
+    at Client.emit (node:events:508:28)
+    at InteractionCreateAction.handle (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\actions\InteractionCreate.js:103:12)
+    at module.exports [as INTERACTION_CREATE] (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\handlers\INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:352:31)
+    at WebSocketManager.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:236:12)
+    at WebSocketManager.emit (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:2504:31)
+    at WebSocketShard.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
+[2026-09-25T15:22:46.993Z] [ERROR] (node:5060) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-25T15:23:07.519Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:24:07.474Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:25:07.485Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:26:07.489Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:27:07.497Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:27:59.645Z] [LOG] [PREFIX] amayaiscool used >clear
+[2026-09-25T15:27:59.646Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:27:59.646Z] [LOG] [PREFIX] Has prefixExecute: undefined
+[2026-09-25T15:28:07.602Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:29:07.508Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:30:07.519Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:31:07.525Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:32:07.554Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:32:25.472Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T15:32:25.515Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:32:25.518Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:32:25.522Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:32:25.525Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:32:25.528Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:32:25.531Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:32:25.535Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:32:25.539Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:32:25.542Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:32:25.546Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:32:25.550Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:32:25.553Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:32:25.556Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:32:25.559Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:32:25.562Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:32:25.564Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:32:25.567Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:32:25.567Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T15:32:25.571Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T15:32:25.573Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T15:32:25.575Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T15:32:25.577Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T15:32:25.578Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T15:32:26.605Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:32:26.703Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:32:34.045Z] [ERROR] Interaction error: ReferenceError: APPLICATION_BUTTON_ID_STAFF is not defined
+    at handleApplicationButton (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/utils/applications.js:806:9)
+    at Object.execute (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/events/interactionCreate.js:68:27)
+    at Client.<anonymous> (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/handlers/eventHandler.js:70:39)
+    at Client.emit (node:events:508:28)
+    at InteractionCreateAction.handle (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\actions\InteractionCreate.js:103:12)
+    at module.exports [as INTERACTION_CREATE] (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\handlers\INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:352:31)
+    at WebSocketManager.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:236:12)
+    at WebSocketManager.emit (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:2504:31)
+    at WebSocketShard.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
+[2026-09-25T15:32:34.050Z] [ERROR] (node:11496) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-25T15:33:26.845Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:34:26.794Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:35:26.802Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:36:26.800Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:37:26.842Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:38:26.914Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:39:26.822Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:40:26.845Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:41:26.893Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:42:26.836Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:43:26.901Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:44:26.847Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:45:26.898Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:46:26.886Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:47:26.882Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:48:26.956Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:49:26.915Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:49:44.437Z] [LOG] Registering 13 commands...
+[2026-09-25T15:49:44.814Z] [LOG] Commands registered successfully.
+[2026-09-25T15:49:47.675Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T15:49:47.679Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T15:49:47.680Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T15:49:47.682Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T15:49:47.689Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T15:49:47.692Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T15:49:47.694Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T15:49:47.697Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T15:49:47.699Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T15:49:47.702Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T15:49:47.704Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T15:49:47.707Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T15:49:47.709Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T15:49:47.711Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T15:49:47.713Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T15:49:47.716Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T15:49:47.718Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T15:49:47.720Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T15:49:47.723Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T15:49:47.725Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T15:49:47.728Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T15:49:47.729Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T15:49:47.732Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T15:49:47.734Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T15:49:47.736Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T15:49:47.738Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T15:49:47.738Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T15:49:49.193Z] [LOG] Logged in as Astra#9406
+[2026-09-25T15:49:49.304Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:50:20.642Z] [LOG] [PREFIX] amayaiscool used >applicationcreate
+[2026-09-25T15:50:20.642Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:50:20.643Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T15:50:49.413Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:51:49.389Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:52:49.400Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:53:49.443Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:54:49.411Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:55:49.406Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:56:49.431Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:57:49.451Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:58:49.506Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:59:49.470Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:00:49.448Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:01:49.457Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:02:49.466Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:03:49.499Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:04:49.462Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:05:49.457Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:06:49.468Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:07:49.495Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:08:49.571Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:09:49.530Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:10:49.541Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:11:49.589Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:12:49.578Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:13:49.599Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:14:07.876Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:14:07.881Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:14:07.882Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:14:49.557Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:15:12.318Z] [LOG] Registering 13 commands...
+[2026-09-25T16:15:12.685Z] [LOG] Commands registered successfully.
+[2026-09-25T16:15:15.869Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T16:15:15.872Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T16:15:15.873Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T16:15:15.874Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T16:15:15.880Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T16:15:15.881Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T16:15:15.883Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T16:15:15.885Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T16:15:15.887Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T16:15:15.890Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T16:15:15.892Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T16:15:15.894Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T16:15:15.896Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T16:15:15.898Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T16:15:15.900Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T16:15:15.902Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T16:15:15.903Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T16:15:15.906Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T16:15:15.909Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T16:15:15.911Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:15:15.914Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:15:15.915Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:15:15.915Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T16:15:15.919Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T16:15:15.921Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T16:15:15.923Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T16:15:15.924Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T16:15:15.925Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T16:15:17.005Z] [LOG] Logged in as Astra#9406
+[2026-09-25T16:15:17.104Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:16:17.249Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:17:17.232Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:18:17.245Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:18:22.816Z] [LOG] [PREFIX] amayaiscool used >applicationcreate
+[2026-09-25T16:18:22.816Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:18:22.817Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:18:51.255Z] [LOG] [PREFIX] amayaiscool used >applicationsend
+[2026-09-25T16:18:51.255Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:18:51.256Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:19:17.387Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:19:50.590Z] [LOG] [PREFIX] amayaiscool used >refresh
+[2026-09-25T16:19:50.591Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:19:50.591Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:19:50.592Z] [LOG] [REFRESH] Command refresh requested by amayaiscool (813018037632237568)
+[2026-09-25T16:19:50.594Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T16:19:50.595Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T16:19:50.597Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T16:19:50.601Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T16:19:50.606Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T16:19:50.611Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T16:19:50.613Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T16:19:50.615Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T16:19:50.617Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T16:19:50.619Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T16:19:50.621Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T16:19:50.623Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T16:19:50.626Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T16:19:50.628Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T16:19:50.631Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T16:19:50.633Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T16:19:50.634Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T16:19:50.636Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T16:19:50.637Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T16:19:50.639Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:19:50.640Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:19:50.642Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:20:01.350Z] [ERROR] (node:22040) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-25T16:20:23.099Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T16:20:23.103Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T16:20:23.104Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T16:20:23.106Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T16:20:23.113Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T16:20:23.115Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T16:20:23.117Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T16:20:23.120Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T16:20:23.122Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T16:20:23.127Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T16:20:23.130Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T16:20:23.133Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T16:20:23.135Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T16:20:23.137Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T16:20:23.139Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T16:20:23.142Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T16:20:23.144Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T16:20:23.147Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T16:20:23.149Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T16:20:23.151Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:20:23.153Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:20:23.154Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:20:23.155Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T16:20:23.158Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T16:20:23.160Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T16:20:23.162Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T16:20:23.163Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T16:20:23.164Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T16:20:24.022Z] [LOG] Logged in as Astra#9406
+[2026-09-25T16:20:24.163Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:20:26.974Z] [ERROR] (node:19964) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-25T16:20:58.996Z] [LOG] [APPLICATION] Preparing staff_application submission for amayaiscool (813018037632237568)
+[2026-09-25T16:20:59.321Z] [LOG] [APPLICATION] Successfully submitted staff_application application from amayaiscool.
+[2026-09-25T16:21:24.294Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:21:36.271Z] [LOG] [PREFIX] amayaiscool used >applicationremove
+[2026-09-25T16:21:36.272Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:21:36.272Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:21:49.366Z] [LOG] [PREFIX] amayaiscool used >applicationcreate
+[2026-09-25T16:21:49.366Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:21:49.367Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:22:04.701Z] [LOG] [PREFIX] amayaiscool used >applicationsend
+[2026-09-25T16:22:04.701Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:22:04.702Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:22:24.268Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:22:37.738Z] [LOG] [PREFIX] amayaiscool used >applicationremove
+[2026-09-25T16:22:37.738Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:22:37.739Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:22:54.915Z] [LOG] [PREFIX] amayaiscool used >applicationcreate
+[2026-09-25T16:22:54.915Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:22:54.916Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:23:03.175Z] [LOG] [PREFIX] amayaiscool used >applicationsend
+[2026-09-25T16:23:03.175Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:23:03.175Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:23:24.306Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:23:52.628Z] [LOG] [PREFIX] amayaiscool used >applicationlist
+[2026-09-25T16:23:52.629Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:23:52.629Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:24:24.331Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:24:56.664Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:24:56.665Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:24:56.665Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:25:02.335Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:25:02.335Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:25:02.336Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:25:24.299Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:25:59.517Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:25:59.518Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:25:59.519Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:26:14.516Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:26:14.517Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:26:14.517Z] [LOG] [PREFIX] Has prefixExecute: function

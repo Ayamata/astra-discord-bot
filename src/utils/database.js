@@ -33,6 +33,18 @@ db.exec(`
         created_at INTEGER NOT NULL,
         closed_at INTEGER
     );
+
+    CREATE TABLE IF NOT EXISTS applications (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        guild_id TEXT NOT NULL,
+        name TEXT NOT NULL,
+        display_name TEXT NOT NULL,
+        description TEXT NOT NULL,
+        questions TEXT NOT NULL,
+        created_by TEXT NOT NULL,
+        created_at INTEGER NOT NULL,
+        UNIQUE (guild_id, name)
+    );
 `);
 
 export function addWarning(
@@ -136,6 +148,82 @@ export function closeTicket(channelId) {
         SET closed_at = ?
         WHERE channel_id = ?
     `).run(Date.now(), channelId);
+}
+
+/*
+ * Applications
+ *
+ * Questions are stored as a JSON array.
+ */
+
+function parseApplication(row) {
+    if (!row) {
+        return null;
+    }
+
+    return {
+        ...row,
+        questions: JSON.parse(row.questions)
+    };
+}
+
+export function createApplication(
+    guildId,
+    name,
+    displayName,
+    description,
+    questions,
+    createdBy
+) {
+    return db.prepare(`
+        INSERT INTO applications
+        (
+            guild_id,
+            name,
+            display_name,
+            description,
+            questions,
+            created_by,
+            created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(
+        guildId,
+        name,
+        displayName,
+        description,
+        JSON.stringify(questions),
+        createdBy,
+        Date.now()
+    );
+}
+
+export function getApplication(guildId, name) {
+    return parseApplication(
+        db.prepare(`
+            SELECT *
+            FROM applications
+            WHERE guild_id = ?
+            AND name = ?
+        `).get(guildId, name)
+    );
+}
+
+export function getApplications(guildId) {
+    return db.prepare(`
+        SELECT *
+        FROM applications
+        WHERE guild_id = ?
+        ORDER BY name ASC
+    `).all(guildId).map(parseApplication);
+}
+
+export function deleteApplication(guildId, name) {
+    return db.prepare(`
+        DELETE FROM applications
+        WHERE guild_id = ?
+        AND name = ?
+    `).run(guildId, name);
 }
 
 export default db;

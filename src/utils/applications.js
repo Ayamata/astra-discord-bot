@@ -2,7 +2,8 @@ import {
     ActionRowBuilder,
     ButtonBuilder,
     ButtonStyle,
-    EmbedBuilder
+    EmbedBuilder,
+    PermissionFlagsBits
 } from "discord.js";
 
 import config from "../config.js";
@@ -12,7 +13,11 @@ import {
     successEmbed
 } from "./embeds.js";
 
-const APPLICATION_BUTTON_ID =
+import {
+    getApplication
+} from "./database.js";
+
+const APPLICATION_START_ID =
     "application_start";
 
 const APPLICATION_ACCEPT_ID =
@@ -28,111 +33,189 @@ const CANCEL_TEXT =
     "CANCEL";
 
 /*
+ * Application names are used inside button IDs,
+ * so keep them short and simple.
+ */
+export const APPLICATION_NAME_PATTERN =
+    /^[a-z0-9_-]{1,32}$/;
+
+export const MAX_QUESTIONS = 25;
+
+export const MAX_QUESTION_LENGTH = 250;
+
+export const MAX_DESCRIPTION_LENGTH = 2000;
+
+/*
+ * Answers are grouped into embeds of this many
+ * questions to keep the submission readable.
+ */
+const QUESTIONS_PER_EMBED = 4;
+
+/*
+ * Discord allows 6000 characters across all
+ * embeds in a single message.
+ */
+const MESSAGE_EMBED_CHARACTER_LIMIT = 5800;
+
+/*
+ * Users currently filling out an application.
+ * Prevents two applications running in the
+ * same DM at once.
+ */
+const activeApplicants =
+    new Set();
+
+function timeoutMinutes() {
+    return Math.floor(
+        config.applications.questionTimeout / 60000
+    );
+}
+
+/*
+ * ============================================================
+ * COMMAND HELPERS
+ * ============================================================
+ */
+
+export function canManageApplications(member) {
+    return Boolean(
+        member?.permissions.has(
+            PermissionFlagsBits.ManageGuild
+        )
+    );
+}
+
+/*
+ * Returns everything after "<prefix><command>"
+ * with the original spacing preserved.
+ */
+export function getRawArguments(message, prefix) {
+    return message.content
+        .slice(prefix.length)
+        .trim()
+        .replace(/^\S+\s*/, "");
+}
+
+/*
+ * Splits arguments either by "|" or by quotes.
+ *
+ *   staff | Join the team | Question one? | Question two?
+ *   staff "Join the team" "Question one?" "Question two?"
+ *
+ * Words outside quotes become their own argument.
+ * Smart quotes (from mobile keyboards) are supported.
+ */
+export function parseArguments(raw) {
+    if (raw.includes("|")) {
+        return raw
+            .split("|")
+            .map(part => part.trim())
+            .filter(Boolean);
+    }
+
+    const normalized =
+        raw.replace(/[“”„]/g, "\"");
+
+    const args = [];
+
+    const pattern =
+        /"([^"]*)"|(\S+)/g;
+
+    let match;
+
+    while ((match = pattern.exec(normalized))) {
+        const value =
+            (match[1] ?? match[2]).trim();
+
+        if (value) {
+            args.push(value);
+        }
+    }
+
+    return args;
+}
+
+/*
+ * Accepts a channel mention, ID, or name.
+ */
+export function resolveTextChannel(guild, input) {
+    if (!input) {
+        return null;
+    }
+
+    const id =
+        input.replace(/^<#(\d+)>$/, "$1");
+
+    const channel =
+        guild.channels.cache.get(id) ??
+        guild.channels.cache.find(
+            channel =>
+                channel.name.toLowerCase() ===
+                input.replace(/^#/, "").toLowerCase()
+        );
+
+    if (!channel?.isTextBased()) {
+        return null;
+    }
+
+    return channel;
+}
+
+/*
  * ============================================================
  * APPLICATION PANEL
  * ============================================================
  */
 
-export function createApplicationPanel(value) {
-    if (value == "staff") {
-        const embed =
-            new EmbedBuilder()
-                .setColor(
-                    config.applications.panelColor
-                )
-                .setTitle("Staff Applications")
-                .setDescription(
-                    [
-                        "Interested in joining the staff team?",
-                        "",
-                        "Click the button below to start your application.",
-                        "",
-                        "The application will take place through **DMs**.",
-                        "You will receive one question at a time.",
-                        "",
-                        `You have **${Math.floor(
-                            config.applications.questionTimeout / 60000
-                        )} minutes** to answer each question.`,
-                        "",
-                        `Type \`${CANCEL_TEXT}\` at any time to cancel.`
-                    ].join("\n")
-                )
-                .setFooter({
-                    text:
-                        "Staff Application System"
-                })
-                .setTimestamp();
+export function createApplicationPanel(application) {
+    const embed =
+        new EmbedBuilder()
+            .setColor(
+                config.applications.panelColor
+            )
+            .setTitle(
+                `${application.display_name} Application`
+            )
+            .setDescription(
+                [
+                    application.description,
+                    "",
+                    "Click the button below to start your application.",
+                    "",
+                    "The application will take place through **DMs**.",
+                    `You will receive **${application.questions.length}** questions, one at a time.`,
+                    "",
+                    `You have **${timeoutMinutes()} minutes** to answer each question.`,
+                    "",
+                    `Type \`${CANCEL_TEXT}\` at any time to cancel.`
+                ].join("\n")
+            )
+            .setFooter({
+                text:
+                    `${application.display_name} Application System`
+            })
+            .setTimestamp();
 
-        const row =
-            new ActionRowBuilder()
-                .addComponents(
-                    new ButtonBuilder()
-                        .setCustomId(
-                            APPLICATION_BUTTON_ID_STAFF
-                        )
-                        .setLabel(
-                            "Start Application"
-                        )
-                        .setEmoji("📝")
-                        .setStyle(
-                            ButtonStyle.Primary
-                        )
-                );
+    const row =
+        new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder()
+                    .setCustomId(
+                        `${APPLICATION_START_ID}:${application.name}`
+                    )
+                    .setLabel(
+                        "Start Application"
+                    )
+                    .setEmoji("📝")
+                    .setStyle(
+                        ButtonStyle.Primary
+                    )
+            );
 
-        return {
-            embeds: [embed],
-            components: [row]
-        };
-    } else if (value == "test") {
-        const embed =
-            new EmbedBuilder()
-                .setColor(
-                    config.applications.panelColor
-                )
-                .setTitle("Staff Applications")
-                .setDescription(
-                    [
-                        "This is a TEST APPLICATION",
-                        "",
-                        "Click the button below to start your application.",
-                        "",
-                        "The application will take place through **DMs**.",
-                        "You will receive one question at a time.",
-                        "",
-                        `You have **${Math.floor(
-                            config.applications.questionTimeout / 60000
-                        )} minutes** to answer each question.`,
-                        "",
-                        `Type \`${CANCEL_TEXT}\` at any time to cancel.`
-                    ].join("\n")
-                )
-                .setFooter({
-                    text:
-                        "TEST APPLICATION System"
-                })
-                .setTimestamp();
-
-        const row =
-            new ActionRowBuilder()
-                .addComponents(
-                    new ButtonBuilder()
-                        .setCustomId(
-                            APPLICATION_BUTTON_ID_TEST
-                        )
-                        .setLabel(
-                            "Start Application"
-                        )
-                        .setEmoji("📝")
-                        .setStyle(
-                            ButtonStyle.Primary
-                        )
-                );
-
-        return {
-            embeds: [embed],
-            components: [row]
-        };
-    }
+    return {
+        embeds: [embed],
+        components: [row]
+    };
 }
 
 /*
@@ -143,146 +226,159 @@ export function createApplicationPanel(value) {
 
 export async function startApplication(
     interaction,
-    value
+    name
 ) {
     const user =
         interaction.user;
 
+    if (!config.applications.enabled) {
+        return interaction.reply({
+            embeds: [
+                errorEmbed(
+                    "Applications Closed",
+                    "The application system is currently disabled."
+                )
+            ],
+            ephemeral: true
+        });
+    }
+
+    const application =
+        getApplication(
+            interaction.guildId,
+            name
+        );
+
+    if (!application) {
+        return interaction.reply({
+            embeds: [
+                errorEmbed(
+                    "Application Not Found",
+                    "This application no longer exists."
+                )
+            ],
+            ephemeral: true
+        });
+    }
+
+    if (activeApplicants.has(user.id)) {
+        return interaction.reply({
+            embeds: [
+                errorEmbed(
+                    "Application In Progress",
+                    "You already have an application in progress. Check your DMs, or type `CANCEL` there to stop it."
+                )
+            ],
+            ephemeral: true
+        });
+    }
+
+    const title =
+        `${application.display_name} Application`;
+
     let dm;
 
-    if (value == "staff") {
-        try {
-            dm =
-                await user.createDM();
+    try {
+        dm =
+            await user.createDM();
 
-            await dm.send({
-                embeds: [
-                    new EmbedBuilder()
-                        .setColor(
-                            config.applications.panelColor
-                        )
-                        .setTitle(
-                            "Staff Application"
-                        )
-                        .setDescription(
-                            [
-                                `Hello ${user}!`,
-                                "",
-                                "Welcome to the staff application.",
-                                "",
-                                `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
-                                "",
-                                `You have **${Math.floor(
-                                    config.applications.questionTimeout / 60000
-                                )} minutes** to answer each question.`
-                            ].join("\n")
-                        )
-                        .setFooter({
-                            text:
-                                "Staff Application System"
-                        })
-                        .setTimestamp()
-                ]
-            });
-
-        } catch (error) {
-            console.error(
-                "[ APPLICATION ] Could not open DM:",
-                error
-            );
-
-            return interaction.reply({
-                embeds: [
-                    errorEmbed(
-                        "Unable to Start Application",
-                        "I couldn't send you a DM. Please enable direct messages from server members and try again."
+        await dm.send({
+            embeds: [
+                new EmbedBuilder()
+                    .setColor(
+                        config.applications.panelColor
                     )
-                ],
-                ephemeral: true
-            });
-        }
-    } else if (value == "test") {
-        try {
-            dm =
-                await user.createDM();
-
-            await dm.send({
-                embeds: [
-                    new EmbedBuilder()
-                        .setColor(
-                            config.applications.panelColor
-                        )
-                        .setTitle(
-                            "TEST APPLICATION"
-                        )
-                        .setDescription(
-                            [
-                                `Hello ${user}!`,
-                                "",
-                                "Welcome to the TEST APPLICATION.",
-                                "",
-                                `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
-                                "",
-                                `You have **${Math.floor(
-                                    config.applications.questionTimeout / 60000
-                                )} minutes** to answer each question.`
-                            ].join("\n")
-                        )
-                        .setFooter({
-                            text:
-                                "TEST APPLICATION System"
-                        })
-                        .setTimestamp()
-                ]
-            });
-
-        } catch (error) {
-            console.error(
-                "[ APPLICATION ] Could not open DM:",
-                error
-            );
-
-            return interaction.reply({
-                embeds: [
-                    errorEmbed(
-                        "Unable to Start Application",
-                        "I couldn't send you a DM. Please enable direct messages from server members and try again."
+                    .setTitle(title)
+                    .setDescription(
+                        [
+                            `Hello ${user}!`,
+                            "",
+                            `Welcome to the **${title}**.`,
+                            "",
+                            `Type \`${CANCEL_TEXT}\` at any time to cancel.`,
+                            "",
+                            `You have **${timeoutMinutes()} minutes** to answer each question.`
+                        ].join("\n")
                     )
-                ],
-                ephemeral: true
-            });
-        }
+                    .setFooter({
+                        text:
+                            `${title} System`
+                    })
+                    .setTimestamp()
+            ]
+        });
+
+    } catch (error) {
+        console.error(
+            "[APPLICATION] Could not open DM:",
+            error
+        );
+
+        return interaction.reply({
+            embeds: [
+                errorEmbed(
+                    "Unable to Start Application",
+                    "I couldn't send you a DM. Please enable direct messages from server members and try again."
+                )
+            ],
+            ephemeral: true
+        });
     }
 
     await interaction.reply({
         embeds: [
             successEmbed(
                 "Application Started",
-                "I've sent you a DM with your staff application."
+                `I've sent you a DM with the **${title}**.`
             )
         ],
         ephemeral: true
     });
 
+    activeApplicants.add(user.id);
+
+    try {
+        const answers =
+            await askQuestions(
+                user,
+                dm,
+                application
+            );
+
+        if (answers) {
+            await submitApplication(
+                user,
+                application,
+                answers,
+                dm
+            );
+        }
+    } finally {
+        activeApplicants.delete(user.id);
+    }
+}
+
+/*
+ * Returns the answers, or null if the
+ * application was cancelled or timed out.
+ */
+async function askQuestions(
+    user,
+    dm,
+    application
+) {
     const answers = [];
 
-    /*
-     * Ask each question
-     */
+    const total =
+        application.questions.length;
 
     for (
         let index = 0;
-        index <
-        config.applications.questions_staff.length;
+        index < total;
         index++
     ) {
         const question =
-            config.applications.questions_staff[
-                index
-            ];
-
-        const total =
-            config.applications.questions_staff.length;
+            application.questions[index];
 
         await dm.send({
             embeds: [
@@ -304,7 +400,7 @@ export async function startApplication(
                     )
                     .setFooter({
                         text:
-                            `${index + 1}/${total} • Staff Application`
+                            `${index + 1}/${total} • ${application.display_name} Application`
                     })
             ]
         });
@@ -339,50 +435,34 @@ export async function startApplication(
                 ]
             });
 
-            return;
-        }
-
-        const answer =
-            collected.first();
-
-        if (!answer) {
-            await dm.send({
-                embeds: [
-                    errorEmbed(
-                        "Application Cancelled",
-                        "Something went wrong while reading your answer."
-                    )
-                ]
-            });
-
-            return;
+            return null;
         }
 
         const content =
-            answer.content.trim();
+            collected.first()?.content.trim() ?? "";
 
         /*
          * Cancel
          */
 
         if (
-            content.toLowerCase() ===
+            content.toUpperCase() ===
             CANCEL_TEXT
         ) {
             await dm.send({
                 embeds: [
                     errorEmbed(
                         "Application Cancelled",
-                        "Your staff application has been cancelled."
+                        "Your application has been cancelled."
                     )
                 ]
             });
 
-            return;
+            return null;
         }
 
         /*
-         * Empty answer
+         * Empty answer (e.g. only an attachment)
          */
 
         if (!content) {
@@ -401,10 +481,6 @@ export async function startApplication(
 
         answers.push(content);
 
-        /*
-         * Progress message
-         */
-
         if (index + 1 < total) {
             await dm.send({
                 embeds: [
@@ -417,15 +493,7 @@ export async function startApplication(
         }
     }
 
-    /*
-     * All questions completed
-     */
-
-    await submitApplication(
-        user,
-        answers,
-        dm
-    );
+    return answers;
 }
 
 /*
@@ -436,11 +504,12 @@ export async function startApplication(
 
 async function submitApplication(
     user,
+    application,
     answers,
     dm
 ) {
     console.log(
-        `[APPLICATION] Preparing submission for ${user.tag} (${user.id})`
+        `[APPLICATION] Preparing ${application.name} submission for ${user.tag} (${user.id})`
     );
 
     const channel =
@@ -457,10 +526,6 @@ async function submitApplication(
                 return null;
             });
 
-    /*
-     * Channel not found
-     */
-
     if (!channel) {
         await dm.send({
             embeds: [
@@ -473,10 +538,6 @@ async function submitApplication(
 
         return;
     }
-
-    /*
-     * Make sure it's a text channel
-     */
 
     if (!channel.isTextBased()) {
         await dm.send({
@@ -541,101 +602,120 @@ async function submitApplication(
     }
 
     /*
-     * Create application embeds
+     * Build the answer embeds
      */
 
     const embeds = [];
 
     let currentEmbed =
-        createApplicationEmbed(user, true);
-
-    let fieldCount = 0;
+        createSubmissionEmbed(
+            user,
+            application,
+            true
+        );
 
     for (
         let index = 0;
         index < answers.length;
         index++
     ) {
-        const question =
-            config.applications.questions_staff[
-                index
-            ];
+        if (
+            index > 0 &&
+            index % QUESTIONS_PER_EMBED === 0
+        ) {
+            embeds.push(currentEmbed);
+
+            currentEmbed =
+                createSubmissionEmbed(
+                    user,
+                    application,
+                    false
+                );
+        }
 
         const answer =
             answers[index] ||
             "No answer provided.";
 
-        const safeAnswer =
-            answer.length > 1024
-                ? `${answer.slice(0, 1021)}...`
-                : answer;
-
         currentEmbed.addFields({
             name:
-                `Q${index + 1}: ${question}`
+                `Q${index + 1}: ${application.questions[index]}`
                     .slice(0, 256),
 
-            value: safeAnswer,
+            value:
+                answer.length > 1024
+                    ? `${answer.slice(0, 1021)}...`
+                    : answer,
 
             inline: false
         });
-
-        fieldCount++;
-
-        /*
-         * Discord allows a maximum of 25
-         * fields per embed.
-         *
-         * Four questions per embed keeps
-         * the application readable.
-         */
-
-        if (
-            fieldCount >= 4 &&
-            index <
-                answers.length - 1
-        ) {
-            embeds.push(
-                currentEmbed
-            );
-
-            currentEmbed =
-                createApplicationEmbed(
-                    user,
-                    false
-                );
-
-            fieldCount = 0;
-        }
     }
 
-    embeds.push(
-        currentEmbed
-    );
+    embeds.push(currentEmbed);
 
     /*
-     * Review buttons
+     * Split the embeds across messages so no
+     * message goes over Discord's size limit.
+     * The review buttons go on the last message.
      */
 
-    const reviewRow =
-        createReviewButtons(
-            user.id
-        );
+    const messages = [];
+
+    let group = [];
+    let groupLength = 0;
+
+    for (const embed of embeds) {
+        const length =
+            embedLength(embed);
+
+        if (
+            group.length &&
+            groupLength + length >
+                MESSAGE_EMBED_CHARACTER_LIMIT
+        ) {
+            messages.push(group);
+
+            group = [];
+            groupLength = 0;
+        }
+
+        group.push(embed);
+        groupLength += length;
+    }
+
+    messages.push(group);
 
     try {
-        await channel.send({
-            content:
-                `📋 **New Staff Application**\nApplicant: ${user}`,
+        for (
+            let index = 0;
+            index < messages.length;
+            index++
+        ) {
+            const isFirst = index === 0;
 
-            embeds,
+            const isLast =
+                index === messages.length - 1;
 
-            components: [
-                reviewRow
-            ]
-        });
+            await channel.send({
+                content: isFirst
+                    ? `📋 **New ${application.display_name} Application**\nApplicant: ${user}`
+                    : undefined,
+
+                embeds: messages[index],
+
+                components: isLast
+                    ? [
+                        createReviewButtons(
+                            user.id,
+                            application.name
+                        )
+                    ]
+                    : []
+            });
+        }
 
         console.log(
-            `[APPLICATION] Successfully submitted application from ${user.tag}.`
+            `[APPLICATION] Successfully submitted ${application.name} application from ${user.tag}.`
         );
 
     } catch (error) {
@@ -665,7 +745,7 @@ async function submitApplication(
             successEmbed(
                 "Application Submitted",
                 [
-                    "Thank you for applying to the staff team!",
+                    `Thank you for submitting the **${application.display_name} Application**!`,
                     "",
                     "Your application has been submitted successfully.",
                     "",
@@ -676,32 +756,58 @@ async function submitApplication(
     });
 }
 
+function embedLength(embed) {
+    const data =
+        embed.data;
+
+    return (
+        (data.title?.length ?? 0) +
+        (data.description?.length ?? 0) +
+        (data.footer?.text.length ?? 0) +
+        (data.author?.name.length ?? 0) +
+        (data.fields ?? []).reduce(
+            (total, field) =>
+                total +
+                field.name.length +
+                field.value.length,
+            0
+        )
+    );
+}
+
 /*
  * ============================================================
- * APPLICATION EMBED
+ * SUBMISSION EMBED
  * ============================================================
  */
 
-function createApplicationEmbed(
+function createSubmissionEmbed(
     user,
+    application,
     isFirstEmbed = false
 ) {
     const embed =
         new EmbedBuilder()
             .setColor(
                 config.applications.applicationColor
-            );
+            )
+            .setFooter({
+                text:
+                    `User ID: ${user.id}`
+            });
 
     // Only the first embed gets the application header.
     if (isFirstEmbed) {
         embed
-            .setTitle("New Staff Application")
+            .setTitle(
+                `New ${application.display_name} Application`
+            )
             .setAuthor({
                 name: user.tag,
                 iconURL: user.displayAvatarURL({
                     size: 256
                 })
-            })
+            });
     }
 
     return embed;
@@ -715,13 +821,19 @@ function createApplicationEmbed(
 
 function createReviewButtons(
     userId,
+    name,
     disabled = false
 ) {
+    const suffix =
+        `${userId}:${name}`;
+
     return new ActionRowBuilder()
         .addComponents(
             new ButtonBuilder()
                 .setCustomId(
-                    `${APPLICATION_ACCEPT_ID}:${userId}`
+                    disabled
+                        ? "application_reviewed_accept"
+                        : `${APPLICATION_ACCEPT_ID}:${suffix}`
                 )
                 .setLabel("Accept")
                 .setEmoji("✅")
@@ -732,7 +844,9 @@ function createReviewButtons(
 
             new ButtonBuilder()
                 .setCustomId(
-                    `${APPLICATION_DENY_ID}:${userId}`
+                    disabled
+                        ? "application_reviewed_deny"
+                        : `${APPLICATION_DENY_ID}:${suffix}`
                 )
                 .setLabel("Deny")
                 .setEmoji("❌")
@@ -743,7 +857,9 @@ function createReviewButtons(
 
             new ButtonBuilder()
                 .setCustomId(
-                    `${APPLICATION_INTERVIEW_ID}:${userId}`
+                    disabled
+                        ? "application_reviewed_interview"
+                        : `${APPLICATION_INTERVIEW_ID}:${suffix}`
                 )
                 .setLabel("Interview")
                 .setEmoji("🎤")
@@ -767,17 +883,14 @@ export function isApplicationButton(
         return false;
     }
 
-    return (
-        interaction.customId ===
-            APPLICATION_BUTTON_ID ||
+    return [
+        APPLICATION_START_ID,
+        APPLICATION_ACCEPT_ID,
+        APPLICATION_DENY_ID,
+        APPLICATION_INTERVIEW_ID
+    ].some(id =>
         interaction.customId.startsWith(
-            `${APPLICATION_ACCEPT_ID}:`
-        ) ||
-        interaction.customId.startsWith(
-            `${APPLICATION_DENY_ID}:`
-        ) ||
-        interaction.customId.startsWith(
-            `${APPLICATION_INTERVIEW_ID}:`
+            `${id}:`
         )
     );
 }
@@ -793,50 +906,34 @@ export async function handleApplicationButton(
 ) {
     const [
         action,
-        userId
+        ...parts
     ] =
         interaction.customId.split(":");
 
     /*
-     * Start button
+     * Start button: application_start:<name>
      */
 
     if (
         action ===
-        APPLICATION_BUTTON_ID_STAFF
+        APPLICATION_START_ID
     ) {
         await startApplication(
             interaction,
-            "staff"
-        );
-
-        return;
-    } else if (
-        action ===
-        APPLICATION_BUTTON_ID_TEST
-    ) {
-        await startApplication(
-            interaction,
-            "test"
+            parts[0]
         );
 
         return;
     }
 
     /*
-     * Make sure this is a review action
+     * Review buttons: <action>:<userId>:<name>
      */
 
-    if (
-        action !==
-            APPLICATION_ACCEPT_ID &&
-        action !==
-            APPLICATION_DENY_ID &&
-        action !==
-            APPLICATION_INTERVIEW_ID
-    ) {
-        return;
-    }
+    const [
+        userId,
+        name
+    ] = parts;
 
     /*
      * Reviewer permission
@@ -854,7 +951,7 @@ export async function handleApplicationButton(
             embeds: [
                 errorEmbed(
                     "Permission Denied",
-                    "You don't have permission to review staff applications."
+                    "You don't have permission to review applications."
                 )
             ],
             ephemeral: true
@@ -862,10 +959,6 @@ export async function handleApplicationButton(
 
         return;
     }
-
-    /*
-     * Find applicant
-     */
 
     const applicant =
         await interaction.client.users
@@ -887,8 +980,17 @@ export async function handleApplicationButton(
     }
 
     /*
-     * ACCEPT
+     * The application may have been removed
+     * since this was submitted.
      */
+
+    const label =
+        getApplication(
+            interaction.guildId,
+            name
+        )?.display_name ??
+        name ??
+        "Staff";
 
     if (
         action ===
@@ -896,15 +998,12 @@ export async function handleApplicationButton(
     ) {
         await handleAccept(
             interaction,
-            applicant
+            applicant,
+            label
         );
 
         return;
     }
-
-    /*
-     * DENY
-     */
 
     if (
         action ===
@@ -912,15 +1011,12 @@ export async function handleApplicationButton(
     ) {
         await handleDeny(
             interaction,
-            applicant
+            applicant,
+            label
         );
 
         return;
     }
-
-    /*
-     * INTERVIEW
-     */
 
     if (
         action ===
@@ -928,7 +1024,8 @@ export async function handleApplicationButton(
     ) {
         await handleInterview(
             interaction,
-            applicant
+            applicant,
+            label
         );
     }
 }
@@ -941,7 +1038,8 @@ export async function handleApplicationButton(
 
 async function handleAccept(
     interaction,
-    applicant
+    applicant,
+    label
 ) {
     let roleAdded = false;
 
@@ -964,7 +1062,7 @@ async function handleAccept(
                 await member.roles.add(
                     config.applications
                         .staffRoleId,
-                    "Staff application accepted"
+                    `${label} application accepted`
                 );
 
                 roleAdded = true;
@@ -978,10 +1076,6 @@ async function handleAccept(
         }
     }
 
-    /*
-     * DM applicant
-     */
-
     await applicant.send({
         embeds: [
             new EmbedBuilder()
@@ -990,13 +1084,13 @@ async function handleAccept(
                         .successColor
                 )
                 .setTitle(
-                    "Staff Application Accepted"
+                    `${label} Application Accepted`
                 )
                 .setDescription(
                     [
                         `Congratulations ${applicant}!`,
                         "",
-                        "Your staff application has been accepted.",
+                        `Your **${label}** application has been accepted.`,
                         "",
                         roleAdded
                             ? "You have also been given the staff role."
@@ -1006,10 +1100,6 @@ async function handleAccept(
                 .setTimestamp()
         ]
     }).catch(() => {});
-
-    /*
-     * Update application message
-     */
 
     await markApplicationReviewed(
         interaction,
@@ -1037,7 +1127,8 @@ async function handleAccept(
 
 async function handleDeny(
     interaction,
-    applicant
+    applicant,
+    label
 ) {
     await applicant.send({
         embeds: [
@@ -1047,13 +1138,13 @@ async function handleDeny(
                         .errorColor
                 )
                 .setTitle(
-                    "Staff Application Update"
+                    `${label} Application Update`
                 )
                 .setDescription(
                     [
                         `Hello ${applicant},`,
                         "",
-                        "Thank you for taking the time to apply for the staff team.",
+                        `Thank you for taking the time to submit a **${label}** application.`,
                         "",
                         "Unfortunately, your application was not accepted at this time.",
                         "",
@@ -1090,7 +1181,8 @@ async function handleDeny(
 
 async function handleInterview(
     interaction,
-    applicant
+    applicant,
+    label
 ) {
     await applicant.send({
         embeds: [
@@ -1100,13 +1192,13 @@ async function handleInterview(
                         .panelColor
                 )
                 .setTitle(
-                    "Staff Interview"
+                    `${label} Interview`
                 )
                 .setDescription(
                     [
                         `Hello ${applicant}!`,
                         "",
-                        "The staff team has reviewed your application and would like to speak with you in an interview.",
+                        `The staff team has reviewed your **${label}** application and would like to speak with you in an interview.`,
                         "",
                         "A staff member will contact you with the next steps."
                     ].join("\n")
@@ -1166,68 +1258,31 @@ async function markApplicationReviewed(
         embeds[embeds.length - 1];
 
     if (lastEmbed) {
-        lastEmbed.addFields({
-            name: "Application Status",
+        lastEmbed
+            .addFields({
+                name: "Application Status",
 
-            value:
-                `**${decision}**\n` +
-                `Reviewed by **${reviewer}**`,
+                value:
+                    `**${decision}**\n` +
+                    `Reviewed by ${reviewer}`,
 
-            inline: false
-        });
-
-        lastEmbed.setFooter({
-            text:
-                `User ID: ${message.embeds[0]?.footer?.text?.replace("User ID: ", "") || "Unknown"}`
-        });
-
-        lastEmbed.setTimestamp()
+                inline: false
+            })
+            .setTimestamp();
     }
 
     /*
      * Disable the review buttons.
      */
-    const disabledRow =
-        new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder()
-                    .setCustomId(
-                        "application_reviewed_accept"
-                    )
-                    .setLabel("Accept")
-                    .setEmoji("✅")
-                    .setStyle(
-                        ButtonStyle.Success
-                    )
-                    .setDisabled(true),
-
-                new ButtonBuilder()
-                    .setCustomId(
-                        "application_reviewed_deny"
-                    )
-                    .setLabel("Deny")
-                    .setEmoji("❌")
-                    .setStyle(
-                        ButtonStyle.Danger
-                    )
-                    .setDisabled(true),
-
-                new ButtonBuilder()
-                    .setCustomId(
-                        "application_reviewed_interview"
-                    )
-                    .setLabel("Interview")
-                    .setEmoji("🎤")
-                    .setStyle(
-                        ButtonStyle.Primary
-                    )
-                    .setDisabled(true)
-            );
 
     await message.edit({
         embeds,
         components: [
-            disabledRow
+            createReviewButtons(
+                null,
+                null,
+                true
+            )
         ]
     });
 }

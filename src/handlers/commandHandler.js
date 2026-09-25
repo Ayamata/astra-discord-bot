@@ -1,8 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
-    fileURLToPath
+    fileURLToPath,
+    pathToFileURL
 } from "node:url";
+
+import {
+    Collection,
+    Routes
+} from "discord.js";
 
 const __filename =
     fileURLToPath(import.meta.url);
@@ -10,12 +16,32 @@ const __filename =
 const __dirname =
     path.dirname(__filename);
 
-export async function loadCommands(client) {
-    const commandsPath =
-        path.join(
-            __dirname,
-            "../commands"
-        );
+const commandsPath =
+    path.join(
+        __dirname,
+        "../commands"
+    );
+
+/*
+ * Loads every command file into client.commands.
+ *
+ * reload: true re-imports each command file from disk
+ * (bypassing Node's module cache) so edited commands
+ * take effect without restarting the bot.
+ *
+ * Returns the number of files that failed to load.
+ */
+export async function loadCommands(
+    client,
+    { reload = false } = {}
+) {
+    const commands =
+        new Collection();
+
+    const version =
+        Date.now();
+
+    let failed = 0;
 
     async function walk(directory) {
         const entries =
@@ -41,10 +67,12 @@ export async function loadCommands(client) {
             }
 
             try {
+                const url =
+                    pathToFileURL(fullPath).href +
+                    (reload ? `?v=${version}` : "");
+
                 const commandModule =
-                    await import(
-                        `file://${fullPath}`
-                    );
+                    await import(url);
 
                 const command =
                     commandModule.default;
@@ -79,7 +107,7 @@ export async function loadCommands(client) {
                  * Load BOTH slash and prefix commands
                  * into client.commands.
                  */
-                client.commands.set(
+                commands.set(
                     commandName,
                     command
                 );
@@ -109,6 +137,8 @@ export async function loadCommands(client) {
                     )
                 );
             } catch (error) {
+                failed++;
+
                 console.error(
                     `[COMMANDS] Failed to load ${entry.name}:`,
                     error
@@ -118,4 +148,40 @@ export async function loadCommands(client) {
     }
 
     await walk(commandsPath);
+
+    /*
+     * Swap in the new set all at once so commands
+     * keep working while files are being imported.
+     */
+    client.commands = commands;
+
+    return failed;
+}
+
+/*
+ * Registers every slash command in client.commands
+ * with Discord for GUILD_ID, replacing the old set.
+ *
+ * Returns the number of slash commands registered.
+ */
+export async function registerSlashCommands(client) {
+    const body =
+        client.commands
+            .filter(command =>
+                typeof command.data?.toJSON ===
+                "function"
+            )
+            .map(command =>
+                command.data.toJSON()
+            );
+
+    await client.rest.put(
+        Routes.applicationGuildCommands(
+            client.application.id,
+            process.env.GUILD_ID
+        ),
+        { body }
+    );
+
+    return body.length;
 }
