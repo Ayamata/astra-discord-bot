@@ -403,3 +403,170 @@
 [2026-09-25T13:40:04.264Z] [LOG] [PREFIX] amayaiscool used >git
 [2026-09-25T13:40:04.265Z] [LOG] [PREFIX] Found command: YES
 [2026-09-25T13:40:04.265Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T13:40:27.084Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T13:40:27.085Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T13:40:27.085Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T13:40:34.043Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T13:40:34.044Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T13:40:34.045Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T13:40:36.152Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:41:36.189Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:42:36.148Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:43:36.152Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:44:36.144Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:45:36.226Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:46:36.204Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:47:36.179Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:48:36.162Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:49:36.190Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:50:36.180Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:51:36.237Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:52:36.216Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:53:36.222Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:54:36.212Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:55:36.238Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:56:36.291Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:57:36.259Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:57:58.009Z] [LOG] [PREFIX] amayaiscool used >cinfo
+[2026-09-25T13:57:58.011Z] [LOG] [PREFIX] Found command: NO
+[2026-09-25T13:58:03.443Z] [LOG] [PREFIX] amayaiscool used >clog
+[2026-09-25T13:58:03.444Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T13:58:03.445Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T13:58:03.445Z] [LOG] [DEBUG] clog command reached
+[2026-09-25T13:58:03.446Z] [LOG] [DISCORD] 813018037632237568 (amayaiscool): 67
+[2026-09-25T13:58:13.602Z] [LOG] [PREFIX] amayaiscool used >cerror
+[2026-09-25T13:58:13.603Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T13:58:13.604Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T13:58:13.605Z] [ERROR] [DISCORD] amayaiscool (813018037632237568): 67
+[2026-09-25T13:58:36.271Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T13:59:36.276Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:00:36.296Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:01:19.980Z] [LOG] [PREFIX] amayaiscool used >explogs
+[2026-09-25T14:01:19.980Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T14:01:19.980Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T14:01:36.355Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:02:36.313Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:03:36.286Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:03:50.974Z] [LOG] [PREFIX] amayaiscool used >applicationmessage
+[2026-09-25T14:03:50.975Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T14:03:50.975Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T14:03:50.976Z] [ERROR] Prefix command error (applicationmessage): ReferenceError: createApplicationEmbed is not defined
+    at Object.prefixExecute (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/commands/applications/applicationPanel.js:73:31)
+    at Object.execute (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/events/messageCreate.js:51:27)
+    at Client.<anonymous> (file:///C:/Users/vtkvi/Desktop/astra-discord-bot/src/handlers/eventHandler.js:50:35)
+    at Client.emit (node:events:508:28)
+    at MessageCreateAction.handle (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\actions\MessageCreate.js:33:14)
+    at module.exports [as MESSAGE_CREATE] (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:352:31)
+    at WebSocketManager.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\discord.js\src\client\websocket\WebSocketManager.js:236:12)
+    at WebSocketManager.emit (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@vladfrangu\async_event_emitter\dist\index.cjs:2504:31)
+    at WebSocketShard.<anonymous> (C:\Users\vtkvi\Desktop\astra-discord-bot\node_modules\@discordjs\ws\dist\index.js:1190:51)
+[2026-09-25T14:04:36.369Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:05:36.297Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:06:36.474Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:07:36.311Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:08:36.522Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:09:36.380Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:10:36.353Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:11:36.499Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:12:36.360Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:13:36.360Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:14:36.415Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:15:36.411Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:16:36.445Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:17:36.403Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:18:36.383Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:19:36.402Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:20:36.418Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:21:36.484Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:22:36.470Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:23:36.482Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:24:03.241Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T14:24:03.291Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T14:24:03.294Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T14:24:03.296Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T14:24:03.300Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T14:24:03.305Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T14:24:03.310Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T14:24:03.318Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T14:24:03.323Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T14:24:03.328Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T14:24:03.334Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T14:24:03.338Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T14:24:03.344Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T14:24:03.355Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T14:24:03.366Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T14:24:03.378Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T14:24:03.390Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T14:24:03.401Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T14:24:04.406Z] [LOG] Logged in as Astra#9406
+[2026-09-25T14:24:04.548Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:24:08.913Z] [LOG] Registering 14 commands...
+[2026-09-25T14:24:09.658Z] [LOG] Commands registered successfully.
+[2026-09-25T14:24:13.205Z] [LOG] [COMMANDS] Loaded applicationmessage [PREFIX + SLASH]
+[2026-09-25T14:24:13.241Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T14:24:13.245Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T14:24:13.249Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T14:24:13.252Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T14:24:13.256Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T14:24:13.260Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T14:24:13.265Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T14:24:13.270Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T14:24:13.274Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T14:24:13.281Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T14:24:13.285Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T14:24:13.287Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T14:24:13.290Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T14:24:13.294Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T14:24:13.298Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T14:24:13.302Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T14:24:13.307Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T14:24:14.694Z] [LOG] Logged in as Astra#9406
+[2026-09-25T14:24:14.821Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:25:14.960Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:26:14.946Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:27:14.990Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:28:15.056Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:29:14.985Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:30:15.020Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:31:14.984Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:32:15.039Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:33:15.006Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:34:14.997Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:35:15.024Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:36:15.023Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:37:15.082Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:38:15.130Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:39:15.088Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:40:15.070Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:41:15.096Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:42:15.154Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:43:15.131Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:44:15.143Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:45:15.127Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:46:15.107Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:47:15.157Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:48:15.127Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:49:15.152Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:50:15.141Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:51:15.151Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:52:15.268Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:53:15.169Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:54:15.170Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:55:15.205Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:56:15.200Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:57:15.232Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:58:15.188Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T14:59:15.210Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:00:15.210Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:01:15.219Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:02:15.281Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:03:15.236Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:04:15.258Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:05:15.232Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T15:06:01.602Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T15:06:01.603Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:06:01.603Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T15:06:04.439Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T15:06:04.440Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T15:06:04.440Z] [LOG] [PREFIX] Has prefixExecute: function

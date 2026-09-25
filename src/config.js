@@ -11,6 +11,31 @@ export default {
         updateInterval:
             60_000
     },
+    /*
+    {user}              Username  
+    {username}          
+    {server}            
+    {memberCount}       
+    */
+    welcome: {
+        enabled: true,
+
+        title: "👋 Welcome to {server}!",
+
+        color: 0x2EAE74,
+
+        message: [
+            "**{server}** is a **performance-focused** Minecraft client + launcher built for speed and simplicity — title screen in about 2–3 seconds.",
+            "",
+            "🚀 Get Astra:",
+            "https://elkku01.github.io/astra-website/",
+            "",
+            "🆘 Need help with anything?",
+            "<#1551290965237571585>"
+        ].join("\n"),
+
+        footer: "Thanks for joining!"
+    },
     moderation: {
         moderatorRoleId: "1552206316540534814",
         logChannelId: "1551655533185077279",
