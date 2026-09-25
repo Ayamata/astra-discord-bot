@@ -1,6 +1,6 @@
 export default {
     bot: {
-        status: "Online",
+        status: "Idle",
         activityType: "WATCHING",
         prefix: ">"
     },

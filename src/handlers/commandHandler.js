@@ -40,18 +40,78 @@ export async function loadCommands(client) {
                 continue;
             }
 
-            const command =
-                await import(
-                    `file://${fullPath}`
+            try {
+                const commandModule =
+                    await import(
+                        `file://${fullPath}`
+                    );
+
+                const command =
+                    commandModule.default;
+
+                if (!command) {
+                    console.warn(
+                        `[COMMANDS] No default export: ${entry.name}`
+                    );
+                    continue;
+                }
+
+                /*
+                 * Get the command name.
+                 *
+                 * Slash commands:
+                 *   data = SlashCommandBuilder
+                 *
+                 * Prefix-only commands:
+                 *   data = { name: "clog" }
+                 */
+                const commandName =
+                    command.data?.name;
+
+                if (!commandName) {
+                    console.warn(
+                        `[COMMANDS] No command name: ${entry.name}`
+                    );
+                    continue;
+                }
+
+                /*
+                 * Load BOTH slash and prefix commands
+                 * into client.commands.
+                 */
+                client.commands.set(
+                    commandName,
+                    command
                 );
 
-            if (
-                command.default?.data &&
-                command.default?.execute
-            ) {
-                client.commands.set(
-                    command.default.data.name,
-                    command.default
+                const types = [];
+
+                if (
+                    typeof command.prefixExecute ===
+                    "function"
+                ) {
+                    types.push("PREFIX");
+                }
+
+                if (
+                    typeof command.execute ===
+                    "function"
+                ) {
+                    types.push("SLASH");
+                }
+
+                console.log(
+                    `[COMMANDS] Loaded ${commandName}` +
+                    (
+                        types.length
+                            ? ` [${types.join(" + ")}]`
+                            : ""
+                    )
+                );
+            } catch (error) {
+                console.error(
+                    `[COMMANDS] Failed to load ${entry.name}:`,
+                    error
                 );
             }
         }

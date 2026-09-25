@@ -5,13 +5,13 @@ export default {
     name: Events.MessageCreate,
 
     async execute(message, client) {
+        // Ignore bots
         if (message.author.bot) return;
 
         const prefix = config.bot.prefix;
 
-        if (!message.content.startsWith(prefix)) {
-            return;
-        }
+        // Message doesn't use our prefix
+        if (!message.content.startsWith(prefix)) return;
 
         const content = message.content
             .slice(prefix.length)
@@ -26,13 +26,26 @@ export default {
 
         const command = client.commands.get(commandName);
 
-        if (!command) {
-            return;
+        console.log(
+            `[PREFIX] ${message.author.tag} used ${prefix}${commandName}`
+        );
+        
+        console.log(
+            `[PREFIX] Found command:`,
+            command ? "YES" : "NO"
+        );
+
+        if (command) {
+            console.log(
+                `[PREFIX] Has prefixExecute:`,
+                typeof command.prefixExecute
+            );
         }
 
-        if (typeof command.prefixExecute !== "function") {
-            return;
-        }
+        if (!command) return;
+        
+        // Prefix-only commands use prefixExecute()
+        if (typeof command.prefixExecute !== "function") return;
 
         try {
             await command.prefixExecute({

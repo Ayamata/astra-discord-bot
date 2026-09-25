@@ -1,7 +1,7 @@
 {
   "name": "astra-discord-bot",
-  "version": "1.0.2",
-  "description": "ASTRA-CLIENT-LAUNCHER-DISCORD-CUSTOM-BOT",
+  "version": "1.0.3",
+  "description": "ASTRA-DISCORD-BOT",
   "type": "module",
   "main": "src/index.js",
   "scripts": {

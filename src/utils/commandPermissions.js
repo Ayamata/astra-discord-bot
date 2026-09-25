@@ -1,11 +1,22 @@
+import { PermissionFlagsBits } from "discord.js";
 import config from "../config.js";
 
-/**
- * Checks whether a Discord user is authorized
- * to use the administrative tool commands.
- */
-export function canUseToolCommands(userId) {
-    return config.tools.authorizedUserIds.includes(
-        userId
-    );
+export function canUseToolCommands(memberOrUserId) {
+    if (!memberOrUserId) return false;
+
+    const userId =
+        typeof memberOrUserId === "string"
+            ? memberOrUserId
+            : memberOrUserId.id;
+
+    // Check authorized user IDs
+    if (
+        config.tools.authorizedUserIds
+            .map(String)
+            .includes(String(userId))
+    ) {
+        return true;
+    }
+
+    return false;
 }
