@@ -1,7 +1,7 @@
 export default {
     bot: {
-        status: "Idle",
-        activityType: "WATCHING",
+        status: "Online",
+        activityType: "STREAMING",
         prefix: ">"
     },
     presence: {
@@ -9,7 +9,7 @@ export default {
             "https://astra-presence.impartial-peacock.workers.dev/v1/online",
 
         updateInterval:
-            60_000
+            3_000
     },
     /*
     {user}              Username  
@@ -63,7 +63,15 @@ export default {
         channelId: "1551983074361741443",
         panelColor: 0x00AEFF,
         applicationColor: 0x00FF7F,
-        questionTimeout: 5 * 60 * 1000
+        questionTimeout: 5 * 60 * 1000,
+
+        /*
+         * Role that can review applications (buttons,
+         * >approve, >deny). Members with Manage Server
+         * can always review. Leave empty for Manage
+         * Server only.
+         */
+        reviewerRoleId: "1553084713701343264"
         /*
          * Applications themselves (name, description, questions)
          * are managed in Discord:

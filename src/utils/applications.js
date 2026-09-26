@@ -14,7 +14,13 @@ import {
 } from "./embeds.js";
 
 import {
-    getApplication
+    createSubmission,
+    deleteSubmission,
+    getApplication,
+    getSubmission,
+    getSubmissionByMessage,
+    setSubmissionMessage,
+    updateSubmissionStatus
 } from "./database.js";
 
 const APPLICATION_START_ID =
@@ -602,6 +608,17 @@ async function submitApplication(
     }
 
     /*
+     * Reserve the application number
+     */
+
+    const number =
+        createSubmission(
+            guild.id,
+            application.name,
+            user.id
+        );
+
+    /*
      * Build the answer embeds
      */
 
@@ -611,7 +628,8 @@ async function submitApplication(
         createSubmissionEmbed(
             user,
             application,
-            true
+            true,
+            number
         );
 
     for (
@@ -696,9 +714,10 @@ async function submitApplication(
             const isLast =
                 index === messages.length - 1;
 
-            await channel.send({
+            const sent =
+                await channel.send({
                 content: isFirst
-                    ? `📋 **New ${application.display_name} Application**\nApplicant: ${user}`
+                    ? `📋 **New ${application.display_name} Application #${number}**\nApplicant: ${user}`
                     : undefined,
 
                 embeds: messages[index],
@@ -712,6 +731,14 @@ async function submitApplication(
                     ]
                     : []
             });
+
+            if (isLast) {
+                setSubmissionMessage(
+                    number,
+                    channel.id,
+                    sent.id
+                );
+            }
         }
 
         console.log(
@@ -723,6 +750,8 @@ async function submitApplication(
             "[APPLICATION] Failed to send application:",
             error
         );
+
+        deleteSubmission(number);
 
         await dm.send({
             embeds: [
@@ -784,7 +813,8 @@ function embedLength(embed) {
 function createSubmissionEmbed(
     user,
     application,
-    isFirstEmbed = false
+    isFirstEmbed = false,
+    number = null
 ) {
     const embed =
         new EmbedBuilder()
@@ -800,7 +830,7 @@ function createSubmissionEmbed(
     if (isFirstEmbed) {
         embed
             .setTitle(
-                `New ${application.display_name} Application`
+                `New ${application.display_name} Application #${number}`
             )
             .setAuthor({
                 name: user.tag,
@@ -897,6 +927,145 @@ export function isApplicationButton(
 
 /*
  * ============================================================
+ * REVIEW PERMISSIONS
+ * ============================================================
+ */
+
+/*
+ * Members with the reviewer role (if configured) or
+ * the Manage Server permission can review.
+ */
+export function canReviewApplications(member) {
+    const reviewerRoleId =
+        config.applications.reviewerRoleId;
+
+    return Boolean(
+        (
+            reviewerRoleId &&
+            member?.roles.cache.has(reviewerRoleId)
+        ) ||
+        canManageApplications(member)
+    );
+}
+
+/*
+ * ============================================================
+ * REVIEW DECISIONS
+ * ============================================================
+ */
+
+const DECISIONS = {
+    accept: {
+        status: "accepted",
+        label: "Accepted",
+        color: () => config.embeds.successColor
+    },
+
+    deny: {
+        status: "denied",
+        label: "Denied",
+        color: () => config.embeds.errorColor
+    },
+
+    interview: {
+        status: "interview",
+        label: "Interview Requested",
+        color: () => config.applications.panelColor
+    }
+};
+
+const FINAL_STATUSES = [
+    "accepted",
+    "denied"
+];
+
+/*
+ * Applies a decision: DMs the applicant, updates the
+ * application message and saves the new status.
+ *
+ * Used by both the review buttons and the
+ * >approve / >deny commands.
+ */
+async function reviewSubmission({
+    decision,
+    guild,
+    reviewer,
+    applicant,
+    label,
+    submission,
+    message,
+    reason = null
+}) {
+    let roleAdded = false;
+
+    if (decision === "accept") {
+        roleAdded =
+            await sendAccepted(
+                guild,
+                applicant,
+                label,
+                reason
+            );
+    } else if (decision === "deny") {
+        await sendDenied(
+            applicant,
+            label,
+            reason
+        );
+    } else {
+        await sendInterview(
+            applicant,
+            label
+        );
+    }
+
+    if (message) {
+        await markApplicationReviewed(
+            message,
+            DECISIONS[decision].label,
+            reviewer,
+            DECISIONS[decision].color(),
+            reason
+        );
+    }
+
+    if (submission) {
+        updateSubmissionStatus(
+            submission.id,
+            DECISIONS[decision].status,
+            reviewer.id
+        );
+    }
+
+    console.log(
+        `[APPLICATION] ${reviewer.tag} marked ${label} application` +
+        `${submission ? ` #${submission.id}` : ""} from ${applicant.tag} as ${DECISIONS[decision].label}.`
+    );
+
+    return { roleAdded };
+}
+
+/*
+ * The application may have been removed since it
+ * was submitted, so fall back to the stored name.
+ */
+function applicationLabel(guildId, name) {
+    return (
+        getApplication(guildId, name)?.display_name ??
+        name ??
+        "Staff"
+    );
+}
+
+function alreadyReviewedMessage(submission) {
+    return (
+        `Application **#${submission.id}** was already ` +
+        `**${submission.status}** by <@${submission.reviewer_id}>.`
+    );
+}
+
+/*
+ * ============================================================
  * HANDLE APPLICATION BUTTONS
  * ============================================================
  */
@@ -935,23 +1104,49 @@ export async function handleApplicationButton(
         name
     ] = parts;
 
-    /*
-     * Reviewer permission
-     */
+    const decision = {
+        [APPLICATION_ACCEPT_ID]: "accept",
+        [APPLICATION_DENY_ID]: "deny",
+        [APPLICATION_INTERVIEW_ID]: "interview"
+    }[action];
 
-    if (
-        config.applications
-            .reviewerRoleId &&
-        !interaction.member.roles.cache.has(
-            config.applications
-                .reviewerRoleId
-        )
-    ) {
+    if (!decision) {
+        return;
+    }
+
+    if (!canReviewApplications(interaction.member)) {
         await interaction.reply({
             embeds: [
                 errorEmbed(
                     "Permission Denied",
                     "You don't have permission to review applications."
+                )
+            ],
+            ephemeral: true
+        });
+
+        return;
+    }
+
+    /*
+     * Applications submitted before numbering
+     * was added have no stored submission.
+     */
+
+    const submission =
+        getSubmissionByMessage(
+            interaction.message.id
+        );
+
+    if (
+        submission &&
+        FINAL_STATUSES.includes(submission.status)
+    ) {
+        await interaction.reply({
+            embeds: [
+                errorEmbed(
+                    "Already Reviewed",
+                    alreadyReviewedMessage(submission)
                 )
             ],
             ephemeral: true
@@ -979,55 +1174,198 @@ export async function handleApplicationButton(
         return;
     }
 
-    /*
-     * The application may have been removed
-     * since this was submitted.
-     */
-
-    const label =
-        getApplication(
+    await reviewSubmission({
+        decision,
+        guild: interaction.guild,
+        reviewer: interaction.user,
+        applicant,
+        label: applicationLabel(
             interaction.guildId,
             name
-        )?.display_name ??
-        name ??
-        "Staff";
+        ),
+        submission,
+        message: interaction.message
+    });
 
-    if (
-        action ===
-        APPLICATION_ACCEPT_ID
-    ) {
-        await handleAccept(
-            interaction,
-            applicant,
-            label
-        );
+    const description =
+        decision === "interview"
+            ? [
+                `${applicant.tag} has been notified that the staff team would like an interview.`,
+                ...(submission
+                    ? [
+                        "",
+                        `After the interview, use \`>approve ${submission.id}\` or \`>deny ${submission.id}\`.`
+                    ]
+                    : [])
+            ].join("\n")
+            : `${applicant.tag}'s application has been ${DECISIONS[decision].status}.`;
 
+    await interaction.reply({
+        embeds: [
+            successEmbed(
+                `Application ${DECISIONS[decision].label}`,
+                description
+            )
+        ],
+        ephemeral: true
+    });
+}
+
+/*
+ * ============================================================
+ * REVIEW COMMANDS (>approve / >deny)
+ * ============================================================
+ */
+
+export async function handleReviewCommand({
+    message,
+    args,
+    prefix,
+    commandName,
+    decision
+}) {
+    if (!message.guild) {
         return;
     }
 
-    if (
-        action ===
-        APPLICATION_DENY_ID
-    ) {
-        await handleDeny(
-            interaction,
-            applicant,
-            label
-        );
-
-        return;
+    if (!canReviewApplications(message.member)) {
+        return message.reply({
+            embeds: [
+                errorEmbed(
+                    "Permission Denied",
+                    "You don't have permission to review applications."
+                )
+            ]
+        });
     }
 
-    if (
-        action ===
-        APPLICATION_INTERVIEW_ID
-    ) {
-        await handleInterview(
-            interaction,
-            applicant,
-            label
+    const number =
+        Number(
+            args[0]?.replace(/^#/, "")
         );
+
+    if (
+        !Number.isInteger(number) ||
+        number < 1
+    ) {
+        return message.reply({
+            embeds: [
+                errorEmbed(
+                    "Missing Arguments",
+                    [
+                        `\`${prefix}${commandName} <application number> [reason]\``,
+                        "",
+                        "The number is shown on the application, e.g. **Staff Application #12**."
+                    ].join("\n")
+                )
+            ]
+        });
     }
+
+    const submission =
+        getSubmission(number);
+
+    if (
+        !submission ||
+        submission.guild_id !== message.guild.id
+    ) {
+        return message.reply({
+            embeds: [
+                errorEmbed(
+                    "Application Not Found",
+                    `There is no application **#${number}**.`
+                )
+            ]
+        });
+    }
+
+    if (FINAL_STATUSES.includes(submission.status)) {
+        return message.reply({
+            embeds: [
+                errorEmbed(
+                    "Already Reviewed",
+                    alreadyReviewedMessage(submission)
+                )
+            ]
+        });
+    }
+
+    const applicant =
+        await message.client.users
+            .fetch(submission.user_id)
+            .catch(() => null);
+
+    if (!applicant) {
+        return message.reply({
+            embeds: [
+                errorEmbed(
+                    "User Not Found",
+                    "I couldn't find the applicant."
+                )
+            ]
+        });
+    }
+
+    /*
+     * The application message may have been deleted.
+     * The decision still goes through without it.
+     */
+
+    let applicationMessage = null;
+
+    if (
+        submission.channel_id &&
+        submission.message_id
+    ) {
+        const channel =
+            await message.guild.channels
+                .fetch(submission.channel_id)
+                .catch(() => null);
+
+        applicationMessage =
+            await channel?.messages
+                .fetch(submission.message_id)
+                .catch(() => null) ??
+            null;
+    }
+
+    const reason =
+        args.slice(1).join(" ").slice(0, 500) ||
+        null;
+
+    const label =
+        applicationLabel(
+            message.guild.id,
+            submission.application_name
+        );
+
+    const { roleAdded } =
+        await reviewSubmission({
+            decision,
+            guild: message.guild,
+            reviewer: message.author,
+            applicant,
+            label,
+            submission,
+            message: applicationMessage,
+            reason
+        });
+
+    return message.reply({
+        embeds: [
+            successEmbed(
+                `Application #${number} ${DECISIONS[decision].label}`,
+                [
+                    `${applicant}'s **${label}** application has been ${DECISIONS[decision].status}.`,
+                    ...(reason ? [`**Reason:** ${reason}`] : []),
+                    ...(roleAdded ? ["The staff role was given."] : []),
+                    applicationMessage
+                        ? `[Jump to application](${applicationMessage.url})`
+                        : "⚠️ I couldn't find the original application message to update."
+                ].join("\n")
+            )
+        ]
+    });
 }
 
 /*
@@ -1036,10 +1374,14 @@ export async function handleApplicationButton(
  * ============================================================
  */
 
-async function handleAccept(
-    interaction,
+/*
+ * Returns whether the staff role was added.
+ */
+async function sendAccepted(
+    guild,
     applicant,
-    label
+    label,
+    reason
 ) {
     let roleAdded = false;
 
@@ -1052,7 +1394,7 @@ async function handleAccept(
             .staffRoleId
     ) {
         const member =
-            await interaction.guild
+            await guild
                 .members
                 .fetch(applicant.id)
                 .catch(() => null);
@@ -1091,6 +1433,7 @@ async function handleAccept(
                         `Congratulations ${applicant}!`,
                         "",
                         `Your **${label}** application has been accepted.`,
+                        ...(reason ? ["", `**Note:** ${reason}`] : []),
                         "",
                         roleAdded
                             ? "You have also been given the staff role."
@@ -1101,22 +1444,7 @@ async function handleAccept(
         ]
     }).catch(() => {});
 
-    await markApplicationReviewed(
-        interaction,
-        "Accepted",
-        interaction.user,
-        config.embeds.successColor
-    );
-
-    await interaction.reply({
-        embeds: [
-            successEmbed(
-                "Application Accepted",
-                `${applicant.tag}'s application has been accepted.`
-            )
-        ],
-        ephemeral: true
-    });
+    return roleAdded;
 }
 
 /*
@@ -1125,10 +1453,10 @@ async function handleAccept(
  * ============================================================
  */
 
-async function handleDeny(
-    interaction,
+async function sendDenied(
     applicant,
-    label
+    label,
+    reason
 ) {
     await applicant.send({
         embeds: [
@@ -1147,6 +1475,7 @@ async function handleDeny(
                         `Thank you for taking the time to submit a **${label}** application.`,
                         "",
                         "Unfortunately, your application was not accepted at this time.",
+                        ...(reason ? ["", `**Reason:** ${reason}`] : []),
                         "",
                         "You may apply again in the future."
                     ].join("\n")
@@ -1154,23 +1483,6 @@ async function handleDeny(
                 .setTimestamp()
         ]
     }).catch(() => {});
-
-    await markApplicationReviewed(
-        interaction,
-        "Denied",
-        interaction.user,
-        config.embeds.errorColor
-    );
-
-    await interaction.reply({
-        embeds: [
-            successEmbed(
-                "Application Denied",
-                `${applicant.tag}'s application has been denied.`
-            )
-        ],
-        ephemeral: true
-    });
 }
 
 /*
@@ -1179,8 +1491,7 @@ async function handleDeny(
  * ============================================================
  */
 
-async function handleInterview(
-    interaction,
+async function sendInterview(
     applicant,
     label
 ) {
@@ -1206,24 +1517,6 @@ async function handleInterview(
                 .setTimestamp()
         ]
     }).catch(() => {});
-
-    await markApplicationReviewed(
-        interaction,
-        "Interview Requested",
-        interaction.user,
-        config.applications
-            .panelColor
-    );
-
-    await interaction.reply({
-        embeds: [
-            successEmbed(
-                "Interview Requested",
-                `${applicant.tag} has been notified that the staff team would like an interview.`
-            )
-        ],
-        ephemeral: true
-    });
 }
 
 /*
@@ -1233,18 +1526,12 @@ async function handleInterview(
  */
 
 async function markApplicationReviewed(
-    interaction,
+    message,
     decision,
     reviewer,
-    color
+    color,
+    reason = null
 ) {
-    const message =
-        interaction.message;
-
-    if (!message) {
-        return;
-    }
-
     const embeds =
         message.embeds.map(
             embed => EmbedBuilder.from(embed)
@@ -1257,14 +1544,23 @@ async function markApplicationReviewed(
     const lastEmbed =
         embeds[embeds.length - 1];
 
-    if (lastEmbed) {
+    /*
+     * After an interview a second status field is
+     * added, so the embed shows the full history.
+     */
+
+    if (
+        lastEmbed &&
+        (lastEmbed.data.fields?.length ?? 0) < 25
+    ) {
         lastEmbed
             .addFields({
                 name: "Application Status",
 
                 value:
                     `**${decision}**\n` +
-                    `Reviewed by ${reviewer}`,
+                    `Reviewed by ${reviewer}` +
+                    (reason ? `\n**Reason:** ${reason}` : ""),
 
                 inline: false
             })
@@ -1284,5 +1580,10 @@ async function markApplicationReviewed(
                 true
             )
         ]
+    }).catch(error => {
+        console.error(
+            "[APPLICATION] Failed to update application message:",
+            error
+        );
     });
 }

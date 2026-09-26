@@ -979,3 +979,1216 @@
 [2026-09-25T16:26:14.516Z] [LOG] [PREFIX] amayaiscool used >git
 [2026-09-25T16:26:14.517Z] [LOG] [PREFIX] Found command: YES
 [2026-09-25T16:26:14.517Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:26:24.302Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:26:29.353Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:26:29.354Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:26:29.355Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:26:40.402Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-25T16:26:40.402Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:26:40.403Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-25T16:27:24.300Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:28:24.307Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:29:24.348Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:30:24.613Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:30:34.351Z] [LOG] [APPLICATION] Preparing staff submission for amayaiscool (813018037632237568)
+[2026-09-25T16:30:34.652Z] [LOG] [APPLICATION] Successfully submitted staff application from amayaiscool.
+[2026-09-25T16:31:24.319Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:32:24.358Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:33:24.335Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:34:24.420Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:35:24.356Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:36:24.360Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:37:24.358Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:38:24.375Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:39:24.401Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:40:24.402Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:41:24.402Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:42:24.434Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:43:24.462Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:44:24.500Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:45:24.453Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:46:24.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:47:24.465Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:48:24.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:49:24.714Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:50:24.483Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:51:13.050Z] [LOG] Registering 13 commands...
+[2026-09-25T16:51:13.383Z] [LOG] Commands registered successfully.
+[2026-09-25T16:51:16.848Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T16:51:16.851Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T16:51:16.852Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T16:51:16.854Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T16:51:16.855Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-25T16:51:16.855Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-25T16:51:16.861Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T16:51:16.864Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T16:51:16.866Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T16:51:16.868Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T16:51:16.871Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T16:51:16.873Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T16:51:16.875Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T16:51:16.876Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T16:51:16.878Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T16:51:16.880Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T16:51:16.881Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T16:51:16.883Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T16:51:16.885Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T16:51:16.887Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T16:51:16.888Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T16:51:16.889Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:51:16.891Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:51:16.892Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:51:16.893Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T16:51:16.896Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T16:51:16.898Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T16:51:16.899Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T16:51:16.901Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T16:51:16.901Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T16:51:17.824Z] [LOG] Logged in as Astra#9406
+[2026-09-25T16:51:17.920Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:51:38.330Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-25T16:51:38.333Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-25T16:51:38.334Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-25T16:51:38.335Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-25T16:51:38.336Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-25T16:51:38.337Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-25T16:51:38.344Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-25T16:51:38.348Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-25T16:51:38.351Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-25T16:51:38.353Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-25T16:51:38.355Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-25T16:51:38.356Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-25T16:51:38.359Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-25T16:51:38.361Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-25T16:51:38.363Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-25T16:51:38.364Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-25T16:51:38.367Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-25T16:51:38.369Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-25T16:51:38.371Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-25T16:51:38.373Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-25T16:51:38.374Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-25T16:51:38.377Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-25T16:51:38.379Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-25T16:51:38.381Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-25T16:51:38.382Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-25T16:51:38.386Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-25T16:51:38.395Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-25T16:51:38.398Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-25T16:51:38.401Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-25T16:51:38.401Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-25T16:51:39.246Z] [LOG] Logged in as Astra#9406
+[2026-09-25T16:51:39.343Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-25T16:51:45.080Z] [LOG] [PREFIX] amayaiscool used >approve
+[2026-09-25T16:51:45.081Z] [LOG] [PREFIX] Found command: YES
+[2026-09-25T16:51:45.081Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-26T09:04:20.253Z] [LOG] Registering 13 commands...
+[2026-09-26T09:04:20.794Z] [LOG] Commands registered successfully.
+[2026-09-26T09:04:33.054Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T09:04:33.062Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T09:04:33.066Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T09:04:33.069Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T09:04:33.072Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T09:04:33.074Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T09:04:33.089Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T09:04:33.094Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T09:04:33.099Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T09:04:33.108Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T09:04:33.120Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T09:04:33.142Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T09:04:33.149Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T09:04:33.161Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T09:04:33.169Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T09:04:33.176Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T09:04:33.183Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T09:04:33.190Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T09:04:33.199Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T09:04:33.212Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T09:04:33.224Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T09:04:33.231Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T09:04:33.236Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T09:04:33.240Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T09:04:33.241Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T09:04:33.307Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T09:04:33.335Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T09:04:33.361Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T09:04:33.696Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T09:04:33.697Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T09:04:34.660Z] [LOG] Logged in as Astra#9406
+[2026-09-26T09:04:34.861Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:05:34.979Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:06:34.979Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:07:34.988Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:08:35.001Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:09:35.035Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:10:34.990Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:11:35.007Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:12:35.026Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:13:35.051Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:14:35.087Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:15:35.045Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:16:35.052Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:17:35.066Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:18:35.072Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:19:35.195Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:20:35.107Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:21:35.101Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:22:35.094Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:23:35.121Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:24:35.202Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:25:35.118Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:26:35.123Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:27:35.145Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:28:35.142Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:29:35.208Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:30:35.201Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:31:35.160Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:32:35.161Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:33:35.186Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:34:35.225Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:35:35.207Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:36:35.188Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:37:35.223Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:38:35.227Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:39:35.276Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:40:35.242Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:41:35.242Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:42:35.245Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:43:35.270Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:44:35.358Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:45:35.287Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:46:35.289Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:47:35.294Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:48:35.320Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:49:35.370Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:50:35.332Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:51:35.340Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:52:35.331Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:53:35.348Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:54:35.395Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:55:35.368Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:56:35.380Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:57:35.386Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:58:35.396Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T09:59:35.446Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:00:35.425Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:01:35.410Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:02:35.452Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:03:35.439Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:04:35.497Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:05:35.428Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:06:35.430Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:07:35.455Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:08:35.465Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:09:35.533Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:10:35.492Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:11:35.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:12:35.499Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:13:35.508Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:14:35.582Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:15:35.502Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:16:35.513Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:17:35.518Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:18:35.532Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:19:35.567Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:20:35.550Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:21:35.542Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:22:35.573Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:23:35.567Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:24:35.659Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:25:35.594Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:26:35.594Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:27:35.632Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:28:35.636Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:29:35.678Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:30:35.623Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:31:35.674Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:32:35.641Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:33:35.643Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:34:35.739Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:35:35.660Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:36:35.669Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:37:35.669Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:38:35.668Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:39:35.726Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:40:35.690Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:41:35.689Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:42:35.697Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:43:35.710Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:44:35.822Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:45:35.741Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:46:35.750Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:47:35.741Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:48:35.726Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:49:35.803Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:50:35.760Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:51:35.766Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:52:35.781Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:53:35.787Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:54:35.840Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:55:35.772Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:56:35.801Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:57:35.845Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:58:35.811Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T10:59:35.852Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:00:35.838Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:01:35.831Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:02:35.880Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:03:35.835Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:04:35.904Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:05:35.843Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:06:35.898Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:07:35.855Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:08:35.863Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:09:35.954Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:10:35.854Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:11:35.894Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:12:35.929Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:13:35.913Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:14:35.938Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:15:35.958Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:16:35.933Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:17:35.931Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:18:35.933Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:19:36.016Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:20:35.950Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:21:35.986Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:22:36.002Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:23:35.959Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:24:36.009Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:25:36.034Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:26:35.982Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:27:36.083Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:28:36.043Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:29:36.096Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:30:36.067Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:31:36.062Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:32:36.047Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:33:36.052Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:34:36.116Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:35:36.073Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:36:36.064Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:37:36.066Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:38:36.069Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:39:36.165Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:40:36.136Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:41:36.132Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:42:36.129Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:43:36.126Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:44:36.192Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:45:36.148Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:46:36.177Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:47:36.165Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:48:36.201Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:49:36.387Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:50:36.170Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:51:36.186Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:52:36.225Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:53:36.204Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:54:36.279Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:55:36.242Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:56:36.229Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:57:36.240Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:58:36.250Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T11:59:36.283Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:00:36.292Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:01:36.278Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:02:36.288Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:03:36.314Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:04:36.335Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:05:36.326Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:06:36.341Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:07:36.348Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:08:36.377Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:09:36.402Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:10:36.362Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:11:27.694Z] [ERROR] (node:12320) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-26T12:11:36.370Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:12:36.373Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:13:36.393Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:14:36.424Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:15:36.403Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:16:36.395Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:17:36.414Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:18:36.435Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:19:36.515Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:20:36.457Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:21:36.444Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:22:36.468Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:23:36.469Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:24:36.536Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:25:36.486Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:26:36.485Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:27:36.521Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:28:36.504Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:29:36.589Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:30:36.533Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:31:36.552Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:32:36.571Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:33:36.574Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:34:36.603Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:35:36.549Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:36:36.537Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:37:36.557Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:38:36.570Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:39:36.628Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:40:36.589Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:41:36.597Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:42:36.605Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:43:36.636Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:44:36.695Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:45:36.654Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:46:36.663Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:47:36.685Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:48:36.680Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:49:36.728Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:50:36.653Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:51:36.670Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:52:36.693Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:53:36.688Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:54:36.765Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:55:36.712Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:56:36.753Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:57:36.723Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:58:36.691Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T12:59:36.770Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:00:36.746Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:01:36.726Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:02:36.737Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:03:36.801Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:04:36.813Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:05:36.778Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:06:36.764Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:07:36.783Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:08:36.795Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:09:36.879Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:10:36.821Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:11:36.848Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:12:36.844Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:13:36.839Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:14:36.891Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:15:36.882Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:16:36.902Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:17:36.895Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:18:37.263Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:19:36.972Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:20:36.908Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:21:36.906Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:22:36.932Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:23:36.948Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:24:36.991Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:25:36.945Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:26:36.965Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:27:36.981Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:28:36.951Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:29:37.062Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:30:36.995Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:31:37.024Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:32:36.979Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:33:37.022Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:34:37.071Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:35:37.010Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:36:37.016Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:37:37.020Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:38:37.088Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:39:37.076Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:40:37.018Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:41:37.074Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:42:37.047Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:43:37.074Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:44:37.175Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:45:37.089Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:46:37.119Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:47:37.106Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:48:37.141Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:49:37.155Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:50:37.094Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:51:37.137Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:52:37.152Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:53:37.120Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T13:54:37.192Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T17:55:57.064Z] [LOG] Registering 13 commands...
+[2026-09-26T17:55:57.383Z] [LOG] Commands registered successfully.
+[2026-09-26T17:56:01.287Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T17:56:01.291Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T17:56:01.293Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T17:56:01.295Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T17:56:01.296Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T17:56:01.298Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T17:56:01.305Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T17:56:01.309Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T17:56:01.313Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T17:56:01.318Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T17:56:01.325Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T17:56:01.332Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T17:56:01.338Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T17:56:01.342Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T17:56:01.346Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T17:56:01.350Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T17:56:01.356Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T17:56:01.360Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T17:56:01.364Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T17:56:01.370Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T17:56:01.375Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T17:56:01.379Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T17:56:01.386Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T17:56:01.390Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T17:56:01.392Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T17:56:01.451Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T17:56:01.474Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T17:56:01.492Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T17:56:01.861Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T17:56:01.862Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T17:56:02.744Z] [LOG] Logged in as Astra#9406
+[2026-09-26T17:56:02.932Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T17:57:03.031Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T17:58:03.136Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T17:59:03.090Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:00:03.100Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:01:03.112Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:02:03.130Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:03:03.103Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:04:03.113Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:05:03.108Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:06:03.144Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:07:03.218Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:08:03.181Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:09:03.201Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:10:03.176Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:11:03.211Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:12:03.209Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:13:03.171Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:14:06.708Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:15:03.700Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:16:03.178Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:17:03.280Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:18:03.212Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:19:03.265Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:20:03.214Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:21:03.213Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:22:03.299Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:23:03.234Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:24:03.248Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:25:03.276Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:26:03.253Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:27:03.410Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:28:03.284Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:29:03.278Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:30:03.300Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:31:03.342Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:32:03.454Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:33:03.337Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:34:03.427Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:35:03.328Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:36:03.329Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:37:03.436Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:38:03.399Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:39:03.384Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:40:03.368Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:41:03.426Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:42:03.534Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:43:03.412Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:44:03.441Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:45:03.430Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:46:03.442Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:47:03.442Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:48:03.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:49:03.466Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:50:03.472Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:51:03.438Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:52:03.465Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:53:03.460Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:54:03.531Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:55:03.477Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:56:03.496Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:57:03.527Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T18:58:03.528Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T18:59:03.563Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:00:03.511Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:01:03.536Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:02:03.521Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:02:45.038Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:02:45.045Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:02:45.062Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:02:45.084Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:02:45.087Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:02:45.091Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:02:45.152Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:02:45.156Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:02:45.812Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:02:45.815Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:02:45.819Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:02:45.833Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:02:45.846Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:02:45.863Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:02:45.874Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:02:45.877Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:02:45.911Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:02:45.935Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:02:45.960Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:02:45.988Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:02:45.992Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:02:45.995Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:02:46.013Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:02:46.029Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:02:46.030Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:02:46.062Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:02:46.078Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:02:46.095Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:02:46.108Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:02:46.109Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:02:47.003Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:02:47.113Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:02:50.184Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:02:53.174Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:02:56.157Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:02:59.230Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:02.198Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:05.207Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:08.210Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:11.216Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:14.222Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:17.211Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:20.237Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:23.264Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:26.267Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:29.265Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:32.278Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:03:35.308Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:38.293Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:41.308Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:44.304Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:47.331Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:50.346Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:53.341Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:56.350Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:03:59.366Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:02.380Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:05.387Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:08.397Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:11.386Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:14.414Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:17.408Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:20.428Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:23.437Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:26.436Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:29.423Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:32.430Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:35.437Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:38.451Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:41.456Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:44.474Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:47.474Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:04:50.490Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:53.492Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:56.510Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:04:59.498Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:02.509Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:05.545Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:08.540Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:11.531Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:14.543Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:17.580Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:20.590Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:23.601Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:26.612Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:29.601Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:32.599Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:35.613Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:38.633Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:41.621Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:44.643Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:47.627Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:50.650Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:53.648Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:56.646Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:05:59.674Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:02.671Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:05.718Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:08.699Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:11.701Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:14.726Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:17.741Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:20.739Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:23.753Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:26.771Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:29.759Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:32.762Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:35.773Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:38.783Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:41.809Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:44.802Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:47.807Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:50.856Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:53.843Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:56.837Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:06:59.848Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:02.869Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:05.891Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:08.885Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:11.878Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:14.896Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:17.909Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:20.914Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:23.906Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:26.911Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:29.919Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:32.932Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:35.937Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:38.947Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:42.192Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:44.968Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:48.451Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:07:48.456Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:07:48.458Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:07:48.461Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:07:48.465Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:07:48.468Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:07:48.482Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:07:48.488Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:07:48.492Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:07:48.495Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:07:48.500Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:07:48.503Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:07:48.507Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:07:48.511Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:07:48.515Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:07:48.517Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:07:48.522Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:07:48.526Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:07:48.530Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:07:48.536Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:07:48.540Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:07:48.543Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:07:48.548Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:07:48.551Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:07:48.552Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:07:48.559Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:07:48.562Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:07:48.567Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:07:48.570Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:07:48.571Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:07:49.844Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:07:49.992Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:53.041Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:56.050Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:07:59.074Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:02.053Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:05.051Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:08.073Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:11.078Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:14.099Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:17.086Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:20.106Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:23.118Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:26.117Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:29.103Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:32.110Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:35.120Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:38.133Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:41.142Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:44.140Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:47.161Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:50.159Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:53.182Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:56.176Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:08:59.195Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:02.205Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:05.206Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:08.226Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:11.217Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:14.217Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:17.237Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:20.247Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:23.249Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:26.270Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:29.273Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:32.288Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:35.297Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:38.300Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:41.306Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:44.321Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:47.346Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:50.354Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:53.337Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:56.357Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:09:59.346Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:02.355Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:05.377Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:08.388Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:11.402Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:14.400Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:17.406Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:20.407Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:23.427Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:26.433Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:29.434Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:32.451Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:35.460Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:38.463Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:52.393Z] [LOG] Registering 13 commands...
+[2026-09-26T19:10:52.763Z] [LOG] Commands registered successfully.
+[2026-09-26T19:10:55.731Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:10:55.736Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:10:55.738Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:10:55.741Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:10:55.743Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:10:55.747Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:10:55.767Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:10:55.770Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:10:55.774Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:10:55.778Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:10:55.781Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:10:55.786Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:10:55.790Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:10:55.795Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:10:55.799Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:10:55.802Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:10:55.806Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:10:55.811Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:10:55.816Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:10:55.823Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:10:55.827Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:10:55.830Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:10:55.839Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:10:55.842Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:10:55.844Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:10:55.852Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:10:55.856Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:10:55.861Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:10:55.864Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:10:55.865Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:10:56.722Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:10:56.874Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:10:59.920Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:11:02.941Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:11:13.561Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:11:13.569Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:11:13.573Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:11:13.579Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:11:13.586Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:11:13.589Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:11:13.608Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:11:13.613Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:11:13.619Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:11:13.625Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:11:13.630Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:11:13.632Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:11:13.637Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:11:13.643Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:11:13.647Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:11:13.650Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:11:13.654Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:11:13.659Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:11:13.663Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:11:13.668Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:11:13.672Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:11:13.679Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:11:13.688Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:11:13.695Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:11:13.696Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:11:13.705Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:11:13.709Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:11:13.711Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:11:13.717Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:11:13.718Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:11:14.670Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:11:14.788Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:11:44.922Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:12:14.903Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:12:44.911Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:13:14.974Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:13:44.924Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:14:14.932Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:14:44.946Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:15:14.940Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:18.262Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:16:18.270Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:16:18.273Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:16:18.276Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:16:18.278Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:16:18.282Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:16:18.299Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:16:18.302Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:16:18.305Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:16:18.309Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:16:18.314Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:16:18.318Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:16:18.321Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:16:18.325Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:16:18.328Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:16:18.333Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:16:18.338Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:16:18.342Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:16:18.345Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:16:18.355Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:16:18.359Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:16:18.363Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:16:18.369Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:16:18.373Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:16:18.375Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:16:18.383Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:16:18.386Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:16:18.388Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:16:18.392Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:16:18.393Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:16:19.461Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:16:19.583Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:30.073Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:16:30.077Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:16:30.079Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:16:30.082Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:16:30.083Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:16:30.086Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:16:30.097Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:16:30.100Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:16:30.104Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:16:30.108Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:16:30.111Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:16:30.113Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:16:30.118Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:16:30.141Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:16:30.147Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:16:30.161Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:16:30.170Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:16:30.180Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:16:30.193Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:16:30.208Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:16:30.211Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:16:30.213Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:16:30.217Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:16:30.221Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:16:30.221Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:16:30.233Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:16:30.242Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:16:30.245Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:16:30.248Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:16:30.249Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:16:31.428Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:16:31.571Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:34.620Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:37.634Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:40.628Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:43.630Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:46.643Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:49.666Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:52.687Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:55.673Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:16:58.668Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:01.687Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:04.711Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:07.722Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:10.712Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:13.701Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:16.708Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:19.709Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:22.722Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:25.721Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:28.739Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:31.756Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:34.761Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:37.758Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:40.771Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:43.771Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:46.796Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:49.782Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:52.819Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:55.837Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:17:58.821Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:01.849Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:04.863Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:07.877Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:10.872Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:13.872Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:16.884Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:19.889Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:22.875Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:25.882Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:28.907Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:31.903Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:34.907Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:37.898Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:40.926Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:43.926Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:46.924Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:49.952Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:52.948Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:55.946Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:18:58.969Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:01.975Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:04.985Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:07.996Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:11.010Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:14.029Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:17.023Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:20.029Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:23.037Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:26.041Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:29.044Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:32.049Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:35.048Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:38.080Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:41.062Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:44.067Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:47.081Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:50.090Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:53.095Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:56.108Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:19:59.111Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:02.123Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:05.133Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:08.141Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:11.146Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:14.156Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:17.163Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:20.188Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:23.198Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:26.198Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:29.198Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:32.210Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:35.217Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:38.236Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:41.238Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:44.246Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:47.267Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:50.274Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:53.289Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:56.289Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:20:59.300Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:02.309Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:05.333Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:08.325Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:11.333Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:14.342Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:17.340Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:20.366Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:23.363Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:26.364Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:29.372Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:32.394Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:35.388Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:38.391Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:41.395Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:44.404Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:47.426Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:50.413Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:53.432Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:56.425Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:21:59.436Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:02.442Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:05.459Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:08.466Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:11.468Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:14.475Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:17.485Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:20.493Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:23.499Z] [LOG] [PRESENCE] Online player count: 0
+[2026-09-26T19:22:26.895Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:29.531Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:32.550Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:35.550Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:38.552Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:41.619Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:44.583Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:47.591Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:50.615Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:53.613Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:56.629Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:22:59.626Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:02.655Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:05.666Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:08.670Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:11.666Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:14.692Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:17.689Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:20.692Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:23.708Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:26.712Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:29.718Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:32.736Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:35.738Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:38.732Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:41.759Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:44.778Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:47.776Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:50.790Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:53.801Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:56.809Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:23:59.811Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:02.816Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:05.833Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:08.831Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:11.854Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:14.847Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:17.866Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:20.861Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:23.880Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:26.886Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:29.889Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:32.916Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:35.925Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:38.941Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:41.942Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:44.957Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:47.965Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:50.965Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:53.979Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:56.977Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:24:59.997Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:03.006Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:06.011Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:09.013Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:12.011Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:15.026Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:18.025Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:21.035Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:24.030Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:27.046Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:25:30.058Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:33.061Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:36.083Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:39.075Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:42.079Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:45.100Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:48.095Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:51.119Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:54.105Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:25:57.130Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:00.126Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:03.128Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:06.159Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:09.152Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:12.159Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:15.174Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:18.186Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:21.190Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:24.209Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:27.222Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:30.223Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:33.230Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:36.235Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:39.237Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:42.239Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:45.256Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:48.264Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:51.297Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:54.317Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:26:57.307Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:00.303Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:03.306Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:06.319Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:09.314Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:12.347Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:15.345Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:18.353Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:21.359Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:24.376Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:27.382Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:30.394Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:33.392Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:36.390Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:39.385Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:42.431Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:45.418Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:48.476Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:51.426Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:54.425Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:27:57.441Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:00.440Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:03.464Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:06.476Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:09.475Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:12.491Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:15.487Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:18.494Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:21.501Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:24.497Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:27.507Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:30.520Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:33.525Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:36.524Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:39.539Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:42.547Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:45.551Z] [LOG] [PRESENCE] Online player count: 1
+[2026-09-26T19:28:48.566Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:53.972Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-26T19:28:53.977Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-26T19:28:53.979Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-26T19:28:53.981Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-26T19:28:53.985Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-26T19:28:53.988Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-26T19:28:54.001Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-26T19:28:54.006Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-26T19:28:54.010Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-26T19:28:54.015Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-26T19:28:54.020Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-26T19:28:54.024Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-26T19:28:54.031Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-26T19:28:54.035Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-26T19:28:54.038Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-26T19:28:54.040Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-26T19:28:54.044Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-26T19:28:54.052Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-26T19:28:54.056Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-26T19:28:54.059Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-26T19:28:54.063Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-26T19:28:54.067Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-26T19:28:54.071Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-26T19:28:54.074Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-26T19:28:54.076Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Desktop\astra-discord-bot\src\events
+[2026-09-26T19:28:54.081Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-26T19:28:54.086Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-26T19:28:54.093Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-26T19:28:54.096Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-26T19:28:54.097Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-26T19:28:55.035Z] [LOG] Logged in as Astra#9406
+[2026-09-26T19:28:55.181Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:28:58.260Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:01.289Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:04.281Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:07.307Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:10.319Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:13.316Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:16.289Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:19.308Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:22.314Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:25.322Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:28.353Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:31.325Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:34.340Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:37.334Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:40.327Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:43.351Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:46.357Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:49.359Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:52.363Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:55.377Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:29:58.402Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:01.386Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:04.412Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:06.765Z] [LOG] [PREFIX] elkku_29 used >git
+[2026-09-26T19:30:06.765Z] [LOG] [PREFIX] Found command: YES
+[2026-09-26T19:30:06.766Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-26T19:30:07.409Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:10.427Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:12.144Z] [LOG] [PREFIX] elkku_29 used >git
+[2026-09-26T19:30:12.145Z] [LOG] [PREFIX] Found command: YES
+[2026-09-26T19:30:12.145Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-26T19:30:13.420Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:16.448Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:19.436Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:19.667Z] [LOG] [PREFIX] elkku_29 used >git
+[2026-09-26T19:30:19.667Z] [LOG] [PREFIX] Found command: YES
+[2026-09-26T19:30:19.668Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-26T19:30:22.437Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:25.445Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:28.451Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:29.037Z] [LOG] [PREFIX] elkku_29 used >git
+[2026-09-26T19:30:29.038Z] [LOG] [PREFIX] Found command: YES
+[2026-09-26T19:30:29.038Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-26T19:30:31.456Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:34.460Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:37.472Z] [LOG] [PRESENCE] Online player count: 2
+[2026-09-26T19:30:38.076Z] [LOG] [PREFIX] elkku_29 used >git
+[2026-09-26T19:30:38.077Z] [LOG] [PREFIX] Found command: YES
+[2026-09-26T19:30:38.077Z] [LOG] [PREFIX] Has prefixExecute: function

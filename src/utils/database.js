@@ -45,6 +45,19 @@ db.exec(`
         created_at INTEGER NOT NULL,
         UNIQUE (guild_id, name)
     );
+
+    CREATE TABLE IF NOT EXISTS application_submissions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        guild_id TEXT NOT NULL,
+        application_name TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'pending',
+        channel_id TEXT,
+        message_id TEXT,
+        reviewer_id TEXT,
+        reviewed_at INTEGER,
+        created_at INTEGER NOT NULL
+    );
 `);
 
 export function addWarning(
@@ -224,6 +237,87 @@ export function deleteApplication(guildId, name) {
         WHERE guild_id = ?
         AND name = ?
     `).run(guildId, name);
+}
+
+/*
+ * Application submissions
+ *
+ * The id is the application number reviewers use
+ * with >approve and >deny.
+ *
+ * status: pending | interview | accepted | denied
+ */
+
+export function createSubmission(
+    guildId,
+    applicationName,
+    userId
+) {
+    return db.prepare(`
+        INSERT INTO application_submissions
+        (
+            guild_id,
+            application_name,
+            user_id,
+            created_at
+        )
+        VALUES (?, ?, ?, ?)
+    `).run(
+        guildId,
+        applicationName,
+        userId,
+        Date.now()
+    ).lastInsertRowid;
+}
+
+export function setSubmissionMessage(
+    id,
+    channelId,
+    messageId
+) {
+    return db.prepare(`
+        UPDATE application_submissions
+        SET channel_id = ?,
+            message_id = ?
+        WHERE id = ?
+    `).run(channelId, messageId, id);
+}
+
+export function getSubmission(id) {
+    return db.prepare(`
+        SELECT *
+        FROM application_submissions
+        WHERE id = ?
+    `).get(id);
+}
+
+export function getSubmissionByMessage(messageId) {
+    return db.prepare(`
+        SELECT *
+        FROM application_submissions
+        WHERE message_id = ?
+    `).get(messageId);
+}
+
+export function updateSubmissionStatus(
+    id,
+    status,
+    reviewerId
+) {
+    return db.prepare(`
+        UPDATE application_submissions
+        SET status = ?,
+            reviewer_id = ?,
+            reviewed_at = ?
+        WHERE id = ?
+    `).run(status, reviewerId, Date.now(), id);
+}
+
+export function deleteSubmission(id) {
+    return db.prepare(`
+        DELETE FROM application_submissions
+        WHERE id = ?
+    `).run(id);
 }
 
 export default db;
