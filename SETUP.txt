@@ -1,0 +1,54 @@
+ASTRA BOT UPDATED — launcher tickets
+====================================
+
+Folder:
+C:\Users\elmer\Downloads\astra-bot-updated
+
+This is the existing Astra Discord bot, plus launcher crash-ticket intake.
+Open Ticket, claim/close, applications, moderation, and prefix tools are unchanged.
+
+What Contact Support does now
+-----------------------------
+1. Astra Launcher posts a private crash payload + crashlog.txt into #support
+   (existing Astra API webhook).
+2. This bot sees that webhook message.
+3. It opens a real ticket in the existing tickets category
+   (same channels/buttons as the Open Ticket button).
+4. It pings the support role, staff, and the player who crashed.
+5. It uploads crashlog.txt inside that private ticket.
+6. It deletes the public #support intake message so the log is not left in public.
+
+If the player already has an open ticket, the crash log is added there instead
+of creating a duplicate.
+
+Step-by-step — put this bot live
+--------------------------------
+1. Stop the currently running astra-discord-bot process.
+2. Copy this folder over the live bot folder
+   (example: C:\Users\vtkvi\Desktop\astra-discord-bot)
+   Keep the existing `.env` and `data` folder. Do not replace the SQLite database.
+3. Confirm `.env` still has:
+     DISCORD_TOKEN=...
+     GUILD_ID=...
+4. In Discord Developer Portal, the bot must keep these intents:
+     Server Members
+     Message Content
+5. Bot permissions in the Astra server (already needed for tickets):
+     View Channels, Send Messages, Embed Links, Attach Files,
+     Manage Channels, Manage Messages, Read Message History, Mention Roles
+6. From this folder run:
+     npm install
+     npm test
+     npm start
+7. Keep the existing ticket panel in #support. You do NOT need to run
+   /ticket-panel again unless that message was deleted.
+8. Restart Astra Launcher so Contact Support sends the new payload.
+9. Test: crash or open the crash overlay → Contact Support.
+   A private ticket should appear, staff + the player should be pinged,
+   and crashlog.txt should be inside the ticket.
+
+Do not change the webhook. The launcher already posts to
+API-ASTRA-WEBHOOK-LAUNCHER in channel 1551953644826665051.
+
+Invite used if the player is not in the server yet:
+https://discord.gg/fHsHjvZM9

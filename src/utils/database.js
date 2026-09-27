@@ -106,10 +106,17 @@ export function removeWarning(id) {
     `).run(id);
 }
 
+const ticketColumns = db.prepare(`PRAGMA table_info(tickets)`).all();
+
+if (!ticketColumns.some((column) => column.name === "kind")) {
+    db.exec(`ALTER TABLE tickets ADD COLUMN kind TEXT NOT NULL DEFAULT 'support'`);
+}
+
 export function addTicket(
     guildId,
     channelId,
-    userId
+    userId,
+    kind = "support"
 ) {
     return db.prepare(`
         INSERT INTO tickets
@@ -117,15 +124,26 @@ export function addTicket(
             guild_id,
             channel_id,
             user_id,
+            kind,
             created_at
         )
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?)
     `).run(
         guildId,
         channelId,
         userId,
+        kind,
         Date.now()
     );
+}
+
+export function countTicketsByKind(guildId, kind) {
+    return db.prepare(`
+        SELECT COUNT(*) AS count
+        FROM tickets
+        WHERE guild_id = ?
+        AND kind = ?
+    `).get(guildId, kind).count;
 }
 
 export function getOpenTickets(guildId, userId) {

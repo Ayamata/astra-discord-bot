@@ -69,10 +69,6 @@ async function updatePresence(
                 ActivityType.Watching
         }
     );
-
-    console.log(
-        `[PRESENCE] Online player count: ${online}`
-    );
 }
 
 export default {

@@ -9,7 +9,7 @@ export default {
             "https://astra-presence.impartial-peacock.workers.dev/v1/online",
 
         updateInterval:
-            3_000
+            25_000
     },
     /*
     {user}              Username  
@@ -48,9 +48,14 @@ export default {
     tickets: {
         enabled: true,
         supportRoleId: "1551911590536937523",
+        staffUserIds: ["797752390680838174"],
         categoryId: "1551980883488145438",
         logChannelId: "1551975698535546931",
         transcriptChannelId: "",
+        panelChannelId: "1551953644826665051",
+        launcherIntakeChannelId: "1551953644826665051",
+        launcherWebhookIds: ["1551915966416429066"],
+        inviteUrl: "https://discord.gg/fHsHjvZM9",
         maximumOpenTickets: 2,
         nameFormat: "ticket-{username}",
         closeAfterHours: 48,
