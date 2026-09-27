@@ -97,13 +97,15 @@ test("accepts unknown error ids from Contact Support without a crash log", () =>
     assert.equal(parsed.errorId, "unknown");
 });
 
-test("reads the launcher source, defaulting to support", () => {
+test("reads the launcher source, defaulting to upload", () => {
     const base = `${LAUNCHER_TICKET_MARKER}\ndiscord_id: 797752390680838174`;
     assert.equal(parseLauncherTicketContent(`${base}\nsource: upload`).source, "upload");
     assert.equal(parseLauncherTicketContent(`${base}\nsource: Upload`).source, "upload");
     assert.equal(parseLauncherTicketContent(`${base}\nsource: support`).source, "support");
-    assert.equal(parseLauncherTicketContent(base).source, "support");
+    assert.equal(parseLauncherTicketContent(base).source, "upload");
 
     const built = buildLauncherTicketContent({ source: "upload", discordId: "797752390680838174" });
     assert.equal(parseLauncherTicketContent(built).source, "upload");
+    const support = buildLauncherTicketContent({ source: "support", discordId: "797752390680838174" });
+    assert.equal(parseLauncherTicketContent(support).source, "support");
 });

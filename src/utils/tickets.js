@@ -23,10 +23,13 @@ import {
     crashLogTooLarge,
     isAllowedLauncherWebhook,
     parseLauncherTicketContent,
-    sanitizeTicketName
+    sanitizeLine,
+    sanitizeTicketName,
+    MAX_LOG_BYTES
 } from "./launcherTicketParse.js";
 
 const processedIntake = new Set();
+const DISCORD_ID = /^\d{17,20}$/;
 
 function ticketButtons() {
     return new ActionRowBuilder()
@@ -48,10 +51,10 @@ function ticketButtons() {
 function supportMentions(userId, extraUserIds = []) {
     const users = [...new Set(
         [userId, ...extraUserIds, ...(config.tickets.staffUserIds || [])]
-            .filter((id) => /^\d{17,20}$/.test(String(id || "")))
+            .filter((id) => DISCORD_ID.test(String(id || "")))
             .map(String)
     )];
-    const roles = /^\d{17,20}$/.test(String(config.tickets.supportRoleId || ""))
+    const roles = DISCORD_ID.test(String(config.tickets.supportRoleId || ""))
         ? [String(config.tickets.supportRoleId)]
         : [];
     const content = [
@@ -60,7 +63,12 @@ function supportMentions(userId, extraUserIds = []) {
     ].join(" ");
     return {
         content: content || null,
-        allowedMentions: { parse: [], users, roles }
+        allowedMentions: {
+            parse: [],
+            users,
+            roles,
+            repliedUser: false
+        }
     };
 }
 
@@ -99,6 +107,18 @@ async function createTicketChannel(guild, user, kind = "support") {
     if (user?.id) {
         overwrites.splice(1, 0, {
             id: user.id,
+            allow: [
+                PermissionFlagsBits.ViewChannel,
+                PermissionFlagsBits.SendMessages,
+                PermissionFlagsBits.ReadMessageHistory
+            ]
+        });
+    }
+
+    for (const staffId of config.tickets.staffUserIds || []) {
+        if (!DISCORD_ID.test(String(staffId)) || staffId === user?.id) continue;
+        overwrites.push({
+            id: staffId,
             allow: [
                 PermissionFlagsBits.ViewChannel,
                 PermissionFlagsBits.SendMessages,
@@ -242,6 +262,11 @@ async function close(interaction) {
     }, 3000);
 }
 
+/**
+ * Webhook messages in the admin console:
+ * - upload / unmarked crash logs stay there. No ticket, no ping, no delete.
+ * - source: support is ignored here. Contact Support uses the bot API, not the webhook.
+ */
 export async function handleLauncherTicketMessage(message) {
     if (!config.tickets.enabled) return false;
     if (!isAllowedLauncherWebhook(message, config)) return false;
@@ -254,102 +279,21 @@ export async function handleLauncherTicketMessage(message) {
     }
 
     const parsed = parseLauncherTicketContent(message.content);
-    if (!parsed) return false;
-    if (parsed.error) {
-        console.error(`[TICKETS] Ignored launcher ticket: ${parsed.error}`);
+    if (!parsed || parsed.error || parsed.source !== "support") {
+        console.log("[TICKETS] Left admin-console webhook message in place (Upload).");
         return true;
     }
 
+    const logFile = await readCrashAttachment(message);
     const guild = message.guild;
     if (!guild) return true;
-
-    // "Upload" is handled by the API; only "Contact Support" opens a ticket.
-    if (parsed.source === "upload") return true;
-
-    let member = guild.members.cache.get(parsed.discordId) || null;
-    if (!member) {
-        member = await guild.members.fetch(parsed.discordId).catch(() => null);
+    const result = await openCrashSupportTicket(guild, parsed, logFile);
+    if (!result.ok) {
+        console.error(`[TICKETS] Webhook Contact Support failed: ${result.error}`);
+        return true;
     }
-
-    const user = member?.user || {
-        id: parsed.discordId,
-        username: parsed.discordUsername || parsed.player || "player"
-    };
-
-    let channel = await resolveOpenChannel(guild, parsed.discordId);
-    let created = false;
-
-    if (!channel) {
-        try {
-            const result = await createTicketChannel(guild, user, "crashlog");
-            if (result.error) {
-                console.error(`[TICKETS] Could not open launcher ticket: ${result.error}`);
-                return true;
-            }
-            channel = result.channel || result.existingChannel;
-            created = Boolean(result.channel);
-        } catch (error) {
-            console.error("[TICKETS] Failed to create launcher ticket channel:", error);
-            return true;
-        }
-    }
-
-    if (!channel) return true;
-
-    const logFile = await readCrashAttachment(message);
-    const embed = new EmbedBuilder()
-        .setColor(config.tickets.ticketColor)
-        .setTitle("Crash report from Astra launcher")
-        .setDescription(
-            member
-                ? `A crash ticket was opened for <@${parsed.discordId}>.`
-                : `A crash ticket was opened for <@${parsed.discordId}>. They may still need to join ${config.tickets.inviteUrl || "the Astra Discord"}.`
-        )
-        .addFields(
-            { name: "Player", value: parsed.player, inline: true },
-            { name: "Discord", value: `${parsed.discordName} (@${parsed.discordUsername})`, inline: true },
-            { name: "Error ID", value: `\`${parsed.errorId}\``, inline: true },
-            { name: "Version", value: parsed.versionLabel, inline: true },
-            { name: "Title", value: parsed.title, inline: false }
-        )
-        .setFooter({ text: created ? "New ticket" : "Added to an existing ticket" })
-        .setTimestamp();
-
-    const payload = {
-        allowedMentions: { parse: [], users: [], roles: [] },
-        embeds: [embed]
-    };
-
-    if (created) {
-        payload.components = [ticketButtons()];
-    }
-
-    if (logFile) {
-        payload.files = [logFile];
-    }
-
-    try {
-        await channel.send(payload);
-        await message.delete().catch(() => {});
-        console.log(
-            `[TICKETS] Launcher ticket ${created ? "created" : "updated"} for ${parsed.discordId} in #${channel.name}`
-        );
-    } catch (error) {
-        console.error("[TICKETS] Failed to post launcher crash log:", error);
-    }
-
+    await message.delete().catch(() => {});
     return true;
-}
-
-async function resolveOpenChannel(guild, userId) {
-    const open = getOpenTickets(guild.id, userId);
-    for (const ticket of open) {
-        const cached = guild.channels.cache.get(ticket.channel_id);
-        if (cached) return cached;
-        const fetched = await guild.channels.fetch(ticket.channel_id).catch(() => null);
-        if (fetched) return fetched;
-    }
-    return null;
 }
 
 async function readCrashAttachment(message) {
@@ -374,3 +318,169 @@ async function readCrashAttachment(message) {
     }
 }
 
+export async function handleLauncherSupportApi(client, body) {
+    if (!config.tickets.enabled) {
+        return { ok: false, status: 503, error: "Tickets are disabled." };
+    }
+
+    const parsed = parseSupportApiBody(body);
+    if (parsed.error) {
+        return { ok: false, status: 400, error: parsed.error };
+    }
+
+    const guildId = String(process.env.GUILD_ID || "").trim();
+    if (!DISCORD_ID.test(guildId)) {
+        return { ok: false, status: 503, error: "Set GUILD_ID in the Discord bot .env." };
+    }
+
+    const guild = await client.guilds.fetch(guildId).catch(() => null);
+    if (!guild) {
+        return { ok: false, status: 503, error: "The Discord bot is not in that server." };
+    }
+
+    const result = await openCrashSupportTicket(guild, parsed, crashLogFile(parsed.crashLog));
+    if (!result.ok) {
+        return { ok: false, status: 502, error: result.error };
+    }
+
+    return { ok: true, channelId: result.channelId };
+}
+
+async function openCrashSupportTicket(guild, parsed, logFile) {
+    let member = guild.members.cache.get(parsed.discordId) || null;
+    if (!member) {
+        member = await guild.members.fetch(parsed.discordId).catch(() => null);
+    }
+
+    const user = member?.user || {
+        id: parsed.discordId,
+        username: parsed.discordUsername || parsed.player || "player"
+    };
+
+    let channel = await resolveOpenChannel(guild, parsed.discordId);
+    let created = false;
+
+    if (!channel) {
+        try {
+            const result = await createTicketChannel(guild, user, "crashlog");
+            if (result.error) {
+                return { ok: false, error: result.error };
+            }
+            channel = result.channel || result.existingChannel;
+            created = Boolean(result.channel);
+        } catch (error) {
+            console.error("[TICKETS] Failed to create launcher ticket channel:", error);
+            return { ok: false, error: "Could not create a support ticket." };
+        }
+    }
+
+    if (!channel) {
+        return { ok: false, error: "Could not create a support ticket." };
+    }
+
+    const mentions = supportMentions(parsed.discordId);
+    const pingLine = [
+        mentions.content,
+        "New support ticket from Astra launcher."
+    ].filter(Boolean).join("\n");
+
+    try {
+        await channel.send({
+            content: pingLine,
+            allowedMentions: mentions.allowedMentions
+        });
+    } catch (error) {
+        console.error("[TICKETS] Failed to ping staff/ticket creator:", error);
+        return { ok: false, error: "Could not ping staff in the support ticket." };
+    }
+
+    const embed = new EmbedBuilder()
+        .setColor(config.tickets.ticketColor)
+        .setTitle("Crash report from Astra launcher")
+        .setDescription(
+            member
+                ? `A crash ticket was opened for <@${parsed.discordId}>.`
+                : `A crash ticket was opened for <@${parsed.discordId}>. They may still need to join ${config.tickets.inviteUrl || "the Astra Discord"}.`
+        )
+        .addFields(
+            { name: "Player", value: parsed.player, inline: true },
+            { name: "Discord", value: `${parsed.discordName} (@${parsed.discordUsername})`, inline: true },
+            { name: "Error ID", value: `\`${parsed.errorId}\``, inline: true },
+            { name: "Version", value: parsed.versionLabel, inline: true },
+            { name: "Title", value: parsed.title, inline: false }
+        )
+        .setFooter({ text: created ? "New ticket" : "Added to an existing ticket" })
+        .setTimestamp();
+
+    const payload = {
+        content: mentions.content,
+        allowedMentions: mentions.allowedMentions,
+        embeds: [embed]
+    };
+
+    if (created) {
+        payload.components = [ticketButtons()];
+    }
+
+    if (logFile) {
+        payload.files = [logFile];
+    }
+
+    try {
+        await channel.send(payload);
+        console.log(
+            `[TICKETS] Launcher ticket ${created ? "created" : "updated"} for ${parsed.discordId} in #${channel.name}`
+        );
+    } catch (error) {
+        console.error("[TICKETS] Failed to post launcher crash log:", error);
+        return { ok: false, error: "Could not post the crash log in the support ticket." };
+    }
+
+    return { ok: true, channelId: channel.id };
+}
+
+function parseSupportApiBody(body) {
+    const discordId = String(body?.discordId || "").trim();
+    if (!DISCORD_ID.test(discordId)) {
+        return { error: "Sign in with Discord to contact support." };
+    }
+
+    const crashLog = String(body?.crashLog || "No crash log was captured for this session.\n");
+    if (crashLogTooLarge(Buffer.byteLength(crashLog, "utf8"))) {
+        return { error: "That crash log is too large to send." };
+    }
+
+    return {
+        source: "support",
+        discordId,
+        discordName: sanitizeLine(body?.discordName, 80),
+        discordUsername: sanitizeLine(body?.discordUsername, 80).replace(/^@/, ""),
+        player: sanitizeLine(body?.player, 80),
+        errorId: sanitizeLine(body?.errorId || "unknown", 80),
+        versionLabel: sanitizeLine(body?.versionLabel || "Astra", 40),
+        title: sanitizeLine(body?.title || "Unexpected Error", 180),
+        crashLog
+    };
+}
+
+function crashLogFile(crashLog) {
+    const text = String(crashLog || "");
+    if (!text.trim()) return null;
+    const bytes = Buffer.from(text, "utf8");
+    if (crashLogTooLarge(bytes.length) || bytes.length > MAX_LOG_BYTES) return null;
+    return new AttachmentBuilder(bytes, {
+        name: "crashlog.txt",
+        description: "Astra launcher crash log"
+    });
+}
+
+async function resolveOpenChannel(guild, userId) {
+    const open = getOpenTickets(guild.id, userId);
+    for (const ticket of open) {
+        const cached = guild.channels.cache.get(ticket.channel_id);
+        if (cached) return cached;
+        const fetched = await guild.channels.fetch(ticket.channel_id).catch(() => null);
+        if (fetched) return fetched;
+    }
+    return null;
+}

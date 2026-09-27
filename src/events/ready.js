@@ -4,6 +4,7 @@ import {
 } from "discord.js";
 
 import config from "../config.js";
+import { startLauncherTicketServer } from "../utils/launcherTicketServer.js";
 
 async function getOnlineCount() {
     try {
@@ -79,6 +80,8 @@ export default {
         console.log(
             `Logged in as ${client.user.tag}`
         );
+
+        startLauncherTicketServer(client);
 
         await updatePresence(
             client

@@ -32,7 +32,7 @@ export default {
             "",
             "🆘 Need help with anything?",
             "<#1551290965237571585>"
-        ].join("\n"),
+        ].join("/n"),
 
         footer: "Thanks for joining!"
     },
@@ -97,7 +97,7 @@ export default {
         * "C:/Users/USER/Desktop/astra-discord-bot"
         */
         gitWorkingDirectory:
-            "C:/Users/vtkvi/Desktop/astra-discord-bot"
+            "C:/Users/vtkvi/Downloads/astra-bot-updated/astra-bot-updated"
     },
     embeds: {
         color: 0x5865F2,

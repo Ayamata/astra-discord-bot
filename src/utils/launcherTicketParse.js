@@ -50,9 +50,10 @@ export function parseLauncherTicketContent(content) {
         return { error: "invalid-error-id" };
     }
 
-    const source = String(fields.source || "").trim().toLowerCase() === "upload"
-        ? "upload"
-        : "support";
+    // Contact Support must say source: support. Everything else is an admin-console upload.
+    const source = String(fields.source || "").trim().toLowerCase() === "support"
+        ? "support"
+        : "upload";
 
     return {
         source,
@@ -69,7 +70,7 @@ export function parseLauncherTicketContent(content) {
 export function buildLauncherTicketContent(ticket) {
     return [
         MARKER,
-        `source: ${ticket.source === "upload" ? "upload" : "support"}`,
+        `source: ${ticket.source === "support" ? "support" : "upload"}`,
         `discord_id: ${String(ticket.discordId || "").trim()}`,
         `discord_name: ${sanitizeLine(ticket.discordName, 80)}`,
         `discord_username: ${sanitizeLine(ticket.discordUsername, 80)}`,
@@ -89,6 +90,14 @@ export function isAllowedLauncherWebhook(message, config) {
     if (String(message.channelId) !== intakeId) return false;
     if (!webhookIds.length) return Boolean(message.webhookId);
     return webhookIds.includes(String(message.webhookId));
+}
+
+export function isAdminConsoleUpload(parsed, content) {
+    if (!parsed) {
+        return /crash log \(admin console\)/i.test(String(content || ""));
+    }
+    if (parsed.error) return false;
+    return parsed.source !== "support";
 }
 
 export function crashLogTooLarge(bytes) {
