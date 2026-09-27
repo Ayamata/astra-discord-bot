@@ -9,7 +9,7 @@ export default {
             "https://astra-presence.impartial-peacock.workers.dev/v1/online",
 
         updateInterval:
-            3_000
+            25_000
     },
     /*
     {user}              Username  
