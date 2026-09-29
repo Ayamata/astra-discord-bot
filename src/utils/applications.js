@@ -35,6 +35,12 @@ const APPLICATION_DENY_ID =
 const APPLICATION_INTERVIEW_ID =
     "application_interview";
 
+const APPLICATION_COMMAND_CONFIRM_ID =
+    "application_command_confirm";
+
+const APPLICATION_COMMAND_CANCEL_ID =
+    "application_command_cancel";
+
 const CANCEL_TEXT =
     "CANCEL";
 
@@ -70,6 +76,11 @@ const MESSAGE_EMBED_CHARACTER_LIMIT = 5800;
  */
 const activeApplicants =
     new Set();
+
+const pendingCommandReviews =
+    new Map();
+
+let pendingCommandReviewId = 0;
 
 function timeoutMinutes() {
     return Math.floor(
@@ -917,7 +928,9 @@ export function isApplicationButton(
         APPLICATION_START_ID,
         APPLICATION_ACCEPT_ID,
         APPLICATION_DENY_ID,
-        APPLICATION_INTERVIEW_ID
+        APPLICATION_INTERVIEW_ID,
+        APPLICATION_COMMAND_CONFIRM_ID,
+        APPLICATION_COMMAND_CANCEL_ID
     ].some(id =>
         interaction.customId.startsWith(
             `${id}:`
@@ -1078,6 +1091,19 @@ export async function handleApplicationButton(
         ...parts
     ] =
         interaction.customId.split(":");
+
+    if (
+        action === APPLICATION_COMMAND_CONFIRM_ID ||
+        action === APPLICATION_COMMAND_CANCEL_ID
+    ) {
+        await handleCommandReviewConfirmation(
+            interaction,
+            action,
+            parts[0]
+        );
+
+        return;
+    }
 
     /*
      * Start button: application_start:<name>
@@ -1339,6 +1365,54 @@ export async function handleReviewCommand({
             submission.application_name
         );
 
+    if (decision === "accept") {
+        for (const [key, pending] of pendingCommandReviews) {
+            if (pending.expiresAt <= Date.now()) {
+                pendingCommandReviews.delete(key);
+            }
+        }
+
+        const confirmationId =
+            (++pendingCommandReviewId).toString(36);
+
+        pendingCommandReviews.set(
+            confirmationId,
+            {
+                guildId: message.guild.id,
+                reviewerId: message.author.id,
+                submissionId: submission.id,
+                reason,
+                label,
+                expiresAt: Date.now() + 15 * 60 * 1000,
+                consumed: false
+            }
+        );
+
+        return message.reply({
+            content: [
+                `Confirm approval for application **#${number}**?`,
+                `${applicant}'s **${label}** application will be marked accepted and the applicant will be notified.`,
+                ...(reason ? [`**Reason:** ${reason}`] : [])
+            ].join("\n"),
+            components: [
+                new ActionRowBuilder().addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(
+                            `${APPLICATION_COMMAND_CONFIRM_ID}:${confirmationId}`
+                        )
+                        .setLabel("Confirm")
+                        .setStyle(ButtonStyle.Success),
+                    new ButtonBuilder()
+                        .setCustomId(
+                            `${APPLICATION_COMMAND_CANCEL_ID}:${confirmationId}`
+                        )
+                        .setLabel("Cancel")
+                        .setStyle(ButtonStyle.Secondary)
+                )
+            ]
+        });
+    }
+
     const { roleAdded } =
         await reviewSubmission({
             decision,
@@ -1366,6 +1440,149 @@ export async function handleReviewCommand({
             )
         ]
     });
+}
+
+async function handleCommandReviewConfirmation(
+    interaction,
+    action,
+    confirmationId
+) {
+    const pending =
+        pendingCommandReviews.get(confirmationId);
+
+    if (
+        !pending ||
+        pending.expiresAt <= Date.now() ||
+        pending.guildId !== interaction.guildId
+    ) {
+        pendingCommandReviews.delete(confirmationId);
+        await interaction.reply({
+            content: "This approval confirmation has expired.",
+            ephemeral: true
+        });
+        return;
+    }
+
+    if (pending.reviewerId !== interaction.user.id) {
+        await interaction.reply({
+            content: "Only the reviewer who started this approval can confirm or cancel it.",
+            ephemeral: true
+        });
+        return;
+    }
+
+    if (action === APPLICATION_COMMAND_CANCEL_ID) {
+        pendingCommandReviews.delete(confirmationId);
+        await interaction.update({
+            content: "Approval cancelled.",
+            components: []
+        });
+        return;
+    }
+
+    if (!canReviewApplications(interaction.member)) {
+        pendingCommandReviews.delete(confirmationId);
+        await interaction.update({
+            content: "Your application review permission is no longer available. Approval was not performed.",
+            components: []
+        });
+        return;
+    }
+
+    if (pending.consumed) {
+        await interaction.reply({
+            content: "This approval is already being processed.",
+            ephemeral: true
+        });
+        return;
+    }
+
+    pending.consumed = true;
+    await interaction.deferUpdate();
+
+    try {
+        const submission =
+            getSubmission(pending.submissionId);
+
+        if (
+            !submission ||
+            submission.guild_id !== interaction.guildId
+        ) {
+            await interaction.editReply({
+                content: "This application could not be found. Approval was not performed.",
+                components: []
+            });
+            return;
+        }
+
+        if (FINAL_STATUSES.includes(submission.status)) {
+            await interaction.editReply({
+                content: alreadyReviewedMessage(submission),
+                components: []
+            });
+            return;
+        }
+
+        const applicant =
+            await interaction.client.users
+                .fetch(submission.user_id)
+                .catch(() => null);
+
+        if (!applicant) {
+            await interaction.editReply({
+                content: "I couldn't find the applicant. Approval was not performed.",
+                components: []
+            });
+            return;
+        }
+
+        let applicationMessage = null;
+
+        if (submission.channel_id && submission.message_id) {
+            const channel =
+                await interaction.guild.channels
+                    .fetch(submission.channel_id)
+                    .catch(() => null);
+
+            applicationMessage =
+                await channel?.messages
+                    .fetch(submission.message_id)
+                    .catch(() => null) ??
+                null;
+        }
+
+        const { roleAdded } =
+            await reviewSubmission({
+                decision: "accept",
+                guild: interaction.guild,
+                reviewer: interaction.user,
+                applicant,
+                label: pending.label,
+                submission,
+                message: applicationMessage,
+                reason: pending.reason
+            });
+
+        await interaction.editReply({
+            embeds: [
+                successEmbed(
+                    `Application #${submission.id} Accepted`,
+                    [
+                        `${applicant}'s **${pending.label}** application has been accepted.`,
+                        ...(pending.reason ? [`**Reason:** ${pending.reason}`] : []),
+                        ...(roleAdded ? ["The staff role was given."] : []),
+                        applicationMessage
+                            ? `[Jump to application](${applicationMessage.url})`
+                            : "⚠️ I couldn't find the original application message to update."
+                    ].join("\n")
+                )
+            ],
+            content: null,
+            components: []
+        });
+    } finally {
+        pendingCommandReviews.delete(confirmationId);
+    }
 }
 
 /*
