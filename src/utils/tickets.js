@@ -49,24 +49,16 @@ function ticketButtons() {
         );
 }
 
-function supportMentions(userId, extraUserIds = []) {
-    const users = [...new Set(
-        [userId, ...extraUserIds, ...(config.tickets.staffUserIds || [])]
-            .filter((id) => DISCORD_ID.test(String(id || "")))
-            .map(String)
-    )];
+function supportMentions() {
     const roles = DISCORD_ID.test(String(config.tickets.supportRoleId || ""))
         ? [String(config.tickets.supportRoleId)]
         : [];
-    const content = [
-        ...roles.map((id) => `<@&${id}>`),
-        ...users.map((id) => `<@${id}>`)
-    ].join(" ");
+    const content = roles.map((id) => `<@&${id}>`).join(" ");
     return {
         content: content || null,
         allowedMentions: {
             parse: [],
-            users,
+            users: [],
             roles,
             repliedUser: false
         }
@@ -159,7 +151,7 @@ async function sendWelcome(channel, user, guild) {
         .setFooter({ text: guild.name })
         .setTimestamp();
 
-    const mentions = supportMentions(user.id);
+    const mentions = supportMentions();
 
     await channel.send({
         content: mentions.content,
@@ -383,7 +375,7 @@ async function openCrashSupportTicket(guild, parsed, logFile) {
         return { ok: false, error: "Could not create a support ticket." };
     }
 
-    const mentions = supportMentions(parsed.discordId);
+    const mentions = supportMentions();
     const pingLine = [
         mentions.content,
         "New support ticket from Astra launcher."
