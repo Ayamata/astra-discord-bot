@@ -5,7 +5,8 @@ import {
     ActionRowBuilder,
     ButtonBuilder,
     ButtonStyle,
-    AttachmentBuilder
+    AttachmentBuilder,
+    OverwriteType
 } from "discord.js";
 
 import config from "../config.js";
@@ -89,11 +90,13 @@ async function createTicketChannel(guild, user, kind = "support") {
     const overwrites = [
         {
             id: guild.roles.everyone.id,
+            type: OverwriteType.Role,
             deny: [PermissionFlagsBits.ViewChannel]
         },
         ...(config.tickets.supportRoleId
             ? [{
                 id: config.tickets.supportRoleId,
+                type: OverwriteType.Role,
                 allow: [
                     PermissionFlagsBits.ViewChannel,
                     PermissionFlagsBits.SendMessages,
@@ -107,6 +110,7 @@ async function createTicketChannel(guild, user, kind = "support") {
     if (user?.id) {
         overwrites.splice(1, 0, {
             id: user.id,
+            type: OverwriteType.Member,
             allow: [
                 PermissionFlagsBits.ViewChannel,
                 PermissionFlagsBits.SendMessages,
@@ -119,6 +123,7 @@ async function createTicketChannel(guild, user, kind = "support") {
         if (!DISCORD_ID.test(String(staffId)) || staffId === user?.id) continue;
         overwrites.push({
             id: staffId,
+            type: OverwriteType.Member,
             allow: [
                 PermissionFlagsBits.ViewChannel,
                 PermissionFlagsBits.SendMessages,
