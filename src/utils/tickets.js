@@ -248,15 +248,159 @@ async function close(interaction) {
         });
     }
 
-    closeTicket(interaction.channel.id);
-
     await interaction.reply({
-        content: "🔒 Closing ticket..."
+        content: "🔒 Saving transcript and closing ticket..."
     });
+
+    try {
+        await sendTranscript(interaction.channel, ticket, interaction.user);
+    } catch (error) {
+        console.error(
+            `[TICKETS] Failed to save transcript for #${interaction.channel.name}:`,
+            error
+        );
+
+        return interaction.followUp({
+            content:
+                "The transcript could not be saved, so this ticket was left open. " +
+                "Check that the bot can send files in the transcript channel, then try again."
+        }).catch(() => {});
+    }
+
+    closeTicket(interaction.channel.id);
 
     setTimeout(async () => {
         await interaction.channel.delete().catch(() => {});
     }, 3000);
+}
+
+const MAX_TRANSCRIPT_MESSAGES = 5000;
+
+async function fetchAllMessages(channel) {
+    const messages = [];
+    let before;
+
+    while (messages.length < MAX_TRANSCRIPT_MESSAGES) {
+        const batch = await channel.messages.fetch({ limit: 100, before });
+        if (!batch.size) break;
+        messages.push(...batch.values());
+        before = batch.last().id;
+        if (batch.size < 100) break;
+    }
+
+    return messages.reverse();
+}
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+function renderMessage(message) {
+    const author = message.member?.displayName || message.author.username;
+    const time = message.createdAt.toLocaleString("en-GB", { timeZone: "UTC" }) + " UTC";
+    const parts = [];
+
+    if (message.content) {
+        parts.push(`<div class="content">${escapeHtml(message.cleanContent)}</div>`);
+    }
+
+    for (const embed of message.embeds) {
+        const fields = embed.fields
+            .map((field) => `<div><b>${escapeHtml(field.name)}</b><br>${escapeHtml(field.value)}</div>`)
+            .join("");
+        parts.push(
+            `<div class="embed">` +
+            (embed.title ? `<div class="embed-title">${escapeHtml(embed.title)}</div>` : "") +
+            (embed.description ? `<div class="content">${escapeHtml(embed.description)}</div>` : "") +
+            fields +
+            `</div>`
+        );
+    }
+
+    for (const attachment of message.attachments.values()) {
+        parts.push(
+            `<div class="attachment">📎 <a href="${escapeHtml(attachment.url)}">${escapeHtml(attachment.name)}</a></div>`
+        );
+    }
+
+    return (
+        `<div class="msg">` +
+        `<img class="avatar" src="${escapeHtml(message.author.displayAvatarURL({ size: 64 }))}" alt="">` +
+        `<div><div class="meta"><span class="author">${escapeHtml(author)}</span>` +
+        (message.author.bot ? ` <span class="bot">BOT</span>` : "") +
+        ` <span class="time">${escapeHtml(time)}</span></div>` +
+        (parts.join("") || `<div class="content muted">(no content)</div>`) +
+        `</div></div>`
+    );
+}
+
+function buildTranscriptHtml(channel, messages) {
+    return `<!doctype html>
+<html><head><meta charset="utf-8"><title>Transcript - ${escapeHtml(channel.name)}</title>
+<style>
+body{margin:0;padding:24px;background:#313338;color:#dbdee1;font-family:"gg sans","Segoe UI",Helvetica,Arial,sans-serif;font-size:15px}
+h1{font-size:18px;margin:0 0 4px;color:#f2f3f5}
+.sub{color:#949ba4;font-size:13px;margin-bottom:20px}
+.msg{display:flex;gap:14px;padding:8px 0}
+.avatar{width:40px;height:40px;border-radius:50%;flex:none}
+.author{font-weight:600;color:#f2f3f5}
+.bot{background:#5865F2;color:#fff;font-size:10px;padding:1px 4px;border-radius:3px}
+.time{color:#949ba4;font-size:12px}
+.content{white-space:pre-wrap;word-break:break-word}
+.muted{color:#949ba4}
+.embed{border-left:4px solid #5865F2;background:#2b2d31;padding:8px 12px;margin-top:4px;border-radius:4px;max-width:520px}
+.embed-title{font-weight:600;margin-bottom:4px}
+a{color:#00a8fc}
+</style></head><body>
+<h1>#${escapeHtml(channel.name)}</h1>
+<div class="sub">${escapeHtml(channel.guild.name)} · ${messages.length} messages</div>
+${messages.map(renderMessage).join("\n")}
+</body></html>`;
+}
+
+async function sendTranscript(channel, ticket, closedBy) {
+    const transcriptChannelId =
+        config.tickets.transcriptChannelId ||
+        config.tickets.logChannelId;
+
+    if (!transcriptChannelId) {
+        console.warn("[TICKETS] No transcript or log channel configured; closing without a transcript.");
+        return;
+    }
+
+    const transcriptChannel = await channel.client.channels.fetch(transcriptChannelId);
+
+    if (!transcriptChannel?.isTextBased() || typeof transcriptChannel.send !== "function") {
+        throw new Error(`Transcript channel ${transcriptChannelId} is missing or cannot receive messages.`);
+    }
+
+    const messages = await fetchAllMessages(channel);
+    const file = new AttachmentBuilder(
+        Buffer.from(buildTranscriptHtml(channel, messages), "utf8"),
+        { name: `transcript-${channel.name}.html` }
+    );
+
+    const embed = new EmbedBuilder()
+        .setColor(config.tickets.ticketColor)
+        .setTitle("📄 Ticket Transcript")
+        .addFields(
+            { name: "Ticket", value: `#${channel.name}`, inline: true },
+            { name: "Opened by", value: `<@${ticket.user_id}>`, inline: true },
+            { name: "Closed by", value: `${closedBy}`, inline: true },
+            { name: "Claimed by", value: ticket.claimed_by ? `<@${ticket.claimed_by}>` : "Unclaimed", inline: true },
+            { name: "Messages", value: String(messages.length), inline: true }
+        )
+        .setTimestamp();
+
+    await transcriptChannel.send({
+        embeds: [embed],
+        files: [file],
+        allowedMentions: { parse: [] }
+    });
 }
 
 /**
