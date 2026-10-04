@@ -4,6 +4,9 @@ import {
 } from "discord.js";
 
 import config from "../config.js";
+import {
+    startEmailSupportPolling
+} from "../utils/emailSupport.js";
 
 async function getOnlineCount() {
     try {
@@ -87,6 +90,8 @@ export default {
         await updatePresence(
             client
         );
+
+        startEmailSupportPolling(client);
 
         setInterval(
             async () => {

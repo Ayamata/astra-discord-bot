@@ -58,6 +58,19 @@ db.exec(`
         reviewed_at INTEGER,
         created_at INTEGER NOT NULL
     );
+
+    CREATE TABLE IF NOT EXISTS email_support_cases (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        gmail_message_id TEXT NOT NULL UNIQUE,
+        from_email TEXT NOT NULL,
+        subject TEXT NOT NULL,
+        body TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'open',
+        discord_channel_id TEXT,
+        discord_message_id TEXT,
+        created_at INTEGER NOT NULL,
+        closed_at INTEGER
+    );
 `);
 
 export function addWarning(
@@ -316,6 +329,77 @@ export function updateSubmissionStatus(
 export function deleteSubmission(id) {
     return db.prepare(`
         DELETE FROM application_submissions
+        WHERE id = ?
+    `).run(id);
+}
+
+export function createEmailSupportCase(
+    gmailMessageId,
+    fromEmail,
+    subject,
+    body
+) {
+    return db.prepare(`
+        INSERT INTO email_support_cases
+        (
+            gmail_message_id,
+            from_email,
+            subject,
+            body,
+            created_at
+        )
+        VALUES (?, ?, ?, ?, ?)
+    `).run(
+        gmailMessageId,
+        fromEmail,
+        subject,
+        body,
+        Date.now()
+    ).lastInsertRowid;
+}
+
+export function getEmailSupportCase(id) {
+    return db.prepare(`
+        SELECT *
+        FROM email_support_cases
+        WHERE id = ?
+    `).get(id);
+}
+
+export function getEmailSupportCaseByMessageId(messageId) {
+    return db.prepare(`
+        SELECT *
+        FROM email_support_cases
+        WHERE gmail_message_id = ?
+    `).get(messageId);
+}
+
+export function setEmailSupportCaseMessage(
+    id,
+    channelId,
+    messageId
+) {
+    return db.prepare(`
+        UPDATE email_support_cases
+        SET discord_channel_id = ?,
+            discord_message_id = ?
+        WHERE id = ?
+    `).run(channelId, messageId, id);
+}
+
+export function closeEmailSupportCase(id) {
+    return db.prepare(`
+        UPDATE email_support_cases
+        SET status = 'closed',
+            closed_at = ?
+        WHERE id = ?
+        AND status = 'open'
+    `).run(Date.now(), id);
+}
+
+export function deleteEmailSupportCase(id) {
+    return db.prepare(`
+        DELETE FROM email_support_cases
         WHERE id = ?
     `).run(id);
 }

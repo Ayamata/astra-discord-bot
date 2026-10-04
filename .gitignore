@@ -6,3 +6,4 @@ data/*.sqlite-wal
 README.md
 other/
 .claude/
+EMAIL_SUPPORT.md

@@ -58,6 +58,13 @@ export default {
         deleteAfterClose: false,
         ticketColor: 0x5865F2
     },
+    emailSupport: {
+        enabled: true,
+        mailboxEmail: "support.astraclient@gmail.com",
+        channelId: "",
+        staffRoleId: "",
+        pollInterval: 60_000
+    },
     applications: {
         enabled: true,
         channelId: "1551983074361741443",

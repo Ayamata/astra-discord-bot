@@ -10,8 +10,11 @@
     "dev": "node --watch src/index.js"
   },
   "dependencies": {
+    "@emailjs/nodejs": "^5.0.2",
     "better-sqlite3": "^11.10.0",
     "discord.js": "^14.27.0",
-    "dotenv": "^16.6.1"
+    "dotenv": "^16.6.1",
+    "imapflow": "^2.2.2",
+    "mailparser": "^3.9.33"
   }
 }
