@@ -84,6 +84,32 @@ function getSenderAddress(parsed) {
     return address;
 }
 
+function isAutomatedEmail(parsed, from) {
+    const localPart =
+        from.split("@")[0].toLowerCase();
+
+    if (
+        /^(no-?reply|do-?not-?reply|mailer-daemon|postmaster|notifications?)$/.test(localPart) ||
+        /^noreply[-_.]|[-_.]noreply$/.test(localPart)
+    ) {
+        return true;
+    }
+
+    const headers =
+        parsed.headers;
+    const autoSubmitted =
+        String(headers.get("auto-submitted") || "").toLowerCase();
+    const precedence =
+        String(headers.get("precedence") || "").toLowerCase();
+
+    return (
+        (autoSubmitted && autoSubmitted !== "no") ||
+        ["bulk", "list", "junk", "auto_reply"].includes(precedence) ||
+        headers.has("list-id") ||
+        headers.has("list-unsubscribe")
+    );
+}
+
 function createEmailEmbed(id, from, subject, body) {
     const description =
         body.length > 3900
@@ -143,6 +169,14 @@ async function processIncomingMessage(
         config.emailSupport.mailboxEmail.toLowerCase()
     ) {
         await markMessageRead(imapClient, uid);
+        return;
+    }
+
+    if (isAutomatedEmail(parsed, from)) {
+        await markMessageRead(imapClient, uid);
+        console.log(
+            `[EMAIL SUPPORT] Skipped automated email from ${from}`
+        );
         return;
     }
 

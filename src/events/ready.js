@@ -2,15 +2,11 @@ import {
     Events,
     ActivityType
 } from "discord.js";
-
 import config from "../config.js";
-<<<<<<< HEAD
 import {
     startEmailSupportPolling
 } from "../utils/emailSupport.js";
-=======
 import { startLauncherTicketServer } from "../utils/launcherTicketServer.js";
->>>>>>> 7e45b9c8d0eed3d847e9dac6926297dc44a21be3
 
 async function getOnlineCount() {
     try {
