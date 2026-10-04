@@ -1,0 +1,40 @@
+ASTRA BOT UPDATED — crash log buttons
+=====================================
+
+Upload Crash Log
+----------------
+Launcher webhook only. Posts the crash log into the admin console channel.
+The bot does nothing: no ticket, no ping, no delete.
+
+Contact Support
+---------------
+Discord bot only. No webhook.
+The launcher POSTs to this bot at:
+
+  http://127.0.0.1:47843/v1/support-ticket
+
+The bot then:
+1. Opens a private ticket in the tickets category
+2. Pings the support role, staff users, and the player who clicked Contact Support
+3. Attaches crashlog.txt inside that ticket
+
+Step-by-step — put this bot live
+--------------------------------
+1. Stop the currently running astra-discord-bot process.
+2. Copy this folder over the live bot folder.
+   Keep the existing `.env` and `data` folder. Do not replace the SQLite database.
+3. Confirm `.env` still has:
+     DISCORD_TOKEN=...        (Bot token with two dots, not the Public Key)
+     GUILD_ID=...
+4. From this folder run:
+     npm install
+     npm test
+     npm start
+5. You should see:
+     [TICKETS] Contact Support API on http://127.0.0.1:47843/v1/support-ticket
+6. Restart Astra Launcher.
+7. Test Upload: log appears in admin console, no ticket, no ping.
+8. Test Contact Support: new ticket, staff + player pinged, crash log attached.
+
+The launcher already has ASTRA_DISCORD_BOT_API=http://127.0.0.1:47843
+in %AppData%\Astra launcher\.env

@@ -4,9 +4,13 @@ import {
 } from "discord.js";
 
 import config from "../config.js";
+<<<<<<< HEAD
 import {
     startEmailSupportPolling
 } from "../utils/emailSupport.js";
+=======
+import { startLauncherTicketServer } from "../utils/launcherTicketServer.js";
+>>>>>>> 7e45b9c8d0eed3d847e9dac6926297dc44a21be3
 
 async function getOnlineCount() {
     try {
@@ -72,10 +76,6 @@ async function updatePresence(
                 ActivityType.Watching
         }
     );
-
-    console.log(
-        `[PRESENCE] Online player count: ${online}`
-    );
 }
 
 export default {
@@ -86,6 +86,8 @@ export default {
         console.log(
             `Logged in as ${client.user.tag}`
         );
+
+        startLauncherTicketServer(client);
 
         await updatePresence(
             client

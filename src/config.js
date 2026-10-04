@@ -32,7 +32,7 @@ export default {
             "",
             "🆘 Need help with anything?",
             "<#1551290965237571585>"
-        ].join("\n"),
+        ].join("/n"),
 
         footer: "Thanks for joining!"
     },
@@ -48,9 +48,14 @@ export default {
     tickets: {
         enabled: true,
         supportRoleId: "1551911590536937523",
+        staffUserIds: ["797752390680838174"],
         categoryId: "1551980883488145438",
         logChannelId: "1551975698535546931",
         transcriptChannelId: "",
+        panelChannelId: "1551953644826665051",
+        launcherIntakeChannelId: "1551953644826665051",
+        launcherWebhookIds: ["1551915966416429066"],
+        inviteUrl: "https://discord.gg/fHsHjvZM9",
         maximumOpenTickets: 2,
         nameFormat: "ticket-{username}",
         closeAfterHours: 48,
@@ -99,7 +104,7 @@ export default {
         * "C:/Users/USER/Desktop/astra-discord-bot"
         */
         gitWorkingDirectory:
-            "C:/Users/vtkvi/Desktop/astra-discord-bot"
+            "C:/Users/vtkvi/Downloads/astra-bot-updated/astra-bot-updated"
     },
     embeds: {
         color: 0x5865F2,

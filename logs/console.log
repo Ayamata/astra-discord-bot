@@ -57,6 +57,7 @@
 [2026-09-27T13:10:10.978Z] [LOG] [PREFIX] elkku_29 used >git
 [2026-09-27T13:10:10.978Z] [LOG] [PREFIX] Found command: YES
 [2026-09-27T13:10:10.979Z] [LOG] [PREFIX] Has prefixExecute: function
+<<<<<<< HEAD
 [2026-09-27T13:10:13.344Z] [LOG] [PRESENCE] Online player count: 2
 [2026-09-27T13:10:16.361Z] [LOG] [PRESENCE] Online player count: 2
 [2026-09-27T13:10:16.930Z] [LOG] [PREFIX] elkku_29 used >git
@@ -613,3 +614,164 @@
 [2026-09-27T13:44:00.827Z] [LOG] [PRESENCE] Online player count: 1
 [2026-09-27T13:44:25.857Z] [LOG] [PRESENCE] Online player count: 1
 [2026-09-27T13:44:50.868Z] [LOG] [PRESENCE] Online player count: 1
+=======
+[2026-09-27T15:35:21.365Z] [LOG] Registering 13 commands...
+[2026-09-27T15:35:21.791Z] [LOG] Commands registered successfully.
+[2026-09-27T15:35:26.761Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-27T15:35:26.765Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-27T15:35:26.767Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-27T15:35:26.768Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-27T15:35:26.770Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-27T15:35:26.772Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-27T15:35:26.782Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-27T15:35:26.785Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-27T15:35:26.789Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-27T15:35:26.793Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-27T15:35:26.796Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-27T15:35:26.798Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-27T15:35:26.801Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-27T15:35:26.813Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-27T15:35:26.820Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-27T15:35:26.825Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-27T15:35:26.832Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-27T15:35:26.838Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-27T15:35:26.844Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-27T15:35:26.853Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-27T15:35:26.859Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-27T15:35:26.866Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-27T15:35:26.871Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-27T15:35:26.872Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-27T15:35:26.873Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Downloads\astramod_updated_1.1\astra-bot-updated\src\events
+[2026-09-27T15:35:26.880Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-27T15:35:26.887Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-27T15:35:26.895Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-27T15:35:26.899Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-27T15:35:26.900Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-27T15:35:29.653Z] [LOG] Logged in as Astra#9406
+[2026-09-27T15:35:29.661Z] [LOG] [TICKETS] Contact Support API on http://127.0.0.1:47843/v1/support-ticket
+[2026-09-27T15:37:26.355Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-27T15:37:26.359Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-27T15:37:26.360Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-27T15:37:26.362Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-27T15:37:26.364Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-27T15:37:26.366Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-27T15:37:26.376Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-27T15:37:26.378Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-27T15:37:26.381Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-27T15:37:26.384Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-27T15:37:26.388Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-27T15:37:26.393Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-27T15:37:26.399Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-27T15:37:26.405Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-27T15:37:26.411Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-27T15:37:26.415Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-27T15:37:26.419Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-27T15:37:26.422Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-27T15:37:26.425Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-27T15:37:26.430Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-27T15:37:26.433Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-27T15:37:26.436Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-27T15:37:26.440Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-27T15:37:26.442Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-27T15:37:26.443Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Downloads\astramod_updated_1.1\astra-bot-updated\src\events
+[2026-09-27T15:37:26.448Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-27T15:37:26.450Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-27T15:37:26.452Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-27T15:37:26.454Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-27T15:37:26.454Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-27T15:37:27.505Z] [LOG] Logged in as Astra#9406
+[2026-09-27T15:37:27.512Z] [LOG] [TICKETS] Contact Support API on http://127.0.0.1:47843/v1/support-ticket
+[2026-09-27T15:37:55.205Z] [LOG] [TICKETS] Left admin-console webhook message in place (Upload).
+[2026-09-27T15:43:24.570Z] [ERROR] (node:5940) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-09-27T15:44:16.733Z] [LOG] Registering 13 commands...
+[2026-09-27T15:44:17.057Z] [LOG] Commands registered successfully.
+[2026-09-27T15:44:20.378Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-27T15:44:20.381Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-27T15:44:20.382Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-27T15:44:20.383Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-27T15:44:20.384Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-27T15:44:20.385Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-27T15:44:20.390Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-27T15:44:20.394Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-27T15:44:20.399Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-27T15:44:20.401Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-27T15:44:20.405Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-27T15:44:20.408Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-27T15:44:20.411Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-27T15:44:20.413Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-27T15:44:20.415Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-27T15:44:20.417Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-27T15:44:20.419Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-27T15:44:20.421Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-27T15:44:20.423Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-27T15:44:20.425Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-27T15:44:20.429Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-27T15:44:20.432Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-27T15:44:20.435Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-27T15:44:20.437Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-27T15:44:20.438Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Downloads\astramod_updated_1.1\astra-bot-updated\src\events
+[2026-09-27T15:44:20.444Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-27T15:44:20.447Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-27T15:44:20.449Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-27T15:44:20.451Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-27T15:44:20.451Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-27T15:44:21.375Z] [LOG] Logged in as Astra#9406
+[2026-09-27T15:44:21.385Z] [LOG] [TICKETS] Contact Support API on http://127.0.0.1:47843/v1/support-ticket
+[2026-09-27T15:45:56.656Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:45:56.658Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:45:56.658Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:45:59.914Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:45:59.915Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:45:59.915Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:46:13.008Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:46:13.009Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:46:13.009Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:46:20.537Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:46:20.538Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:46:20.538Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:47:31.199Z] [LOG] [COMMANDS] Loaded applicationcreate [PREFIX]
+[2026-09-27T15:47:31.203Z] [LOG] [COMMANDS] Loaded applicationlist [PREFIX]
+[2026-09-27T15:47:31.204Z] [LOG] [COMMANDS] Loaded applicationremove [PREFIX]
+[2026-09-27T15:47:31.205Z] [LOG] [COMMANDS] Loaded applicationsend [PREFIX]
+[2026-09-27T15:47:31.206Z] [LOG] [COMMANDS] Loaded approve [PREFIX]
+[2026-09-27T15:47:31.208Z] [LOG] [COMMANDS] Loaded deny [PREFIX]
+[2026-09-27T15:47:31.222Z] [LOG] [COMMANDS] Loaded ban [SLASH]
+[2026-09-27T15:47:31.225Z] [LOG] [COMMANDS] Loaded clear [SLASH]
+[2026-09-27T15:47:31.228Z] [LOG] [COMMANDS] Loaded kick [SLASH]
+[2026-09-27T15:47:31.231Z] [LOG] [COMMANDS] Loaded lock [SLASH]
+[2026-09-27T15:47:31.234Z] [LOG] [COMMANDS] Loaded nickname [SLASH]
+[2026-09-27T15:47:31.237Z] [LOG] [COMMANDS] Loaded slowmode [SLASH]
+[2026-09-27T15:47:31.241Z] [LOG] [COMMANDS] Loaded timeout [SLASH]
+[2026-09-27T15:47:31.246Z] [LOG] [COMMANDS] Loaded unban [PREFIX + SLASH]
+[2026-09-27T15:47:31.249Z] [LOG] [COMMANDS] Loaded unlock [SLASH]
+[2026-09-27T15:47:31.251Z] [LOG] [COMMANDS] Loaded untimeout [SLASH]
+[2026-09-27T15:47:31.253Z] [LOG] [COMMANDS] Loaded warn [SLASH]
+[2026-09-27T15:47:31.257Z] [LOG] [COMMANDS] Loaded warnings [SLASH]
+[2026-09-27T15:47:31.261Z] [LOG] [COMMANDS] Loaded ticket-panel [SLASH]
+[2026-09-27T15:47:31.263Z] [LOG] [COMMANDS] Loaded cerror [PREFIX]
+[2026-09-27T15:47:31.266Z] [LOG] [COMMANDS] Loaded clog [PREFIX]
+[2026-09-27T15:47:31.267Z] [LOG] [COMMANDS] Loaded explogs [PREFIX]
+[2026-09-27T15:47:31.269Z] [LOG] [COMMANDS] Loaded git [PREFIX]
+[2026-09-27T15:47:31.271Z] [LOG] [COMMANDS] Loaded refresh [PREFIX]
+[2026-09-27T15:47:31.272Z] [LOG] [EVENTS] Loading events from: C:\Users\vtkvi\Downloads\astramod_updated_1.1\astra-bot-updated\src\events
+[2026-09-27T15:47:31.278Z] [LOG] [EVENTS] Loaded interactionCreate.js → interactionCreate
+[2026-09-27T15:47:31.280Z] [LOG] [EVENTS] Loaded messageCreate.js → messageCreate
+[2026-09-27T15:47:31.283Z] [LOG] [EVENTS] Loaded ready.js → clientReady
+[2026-09-27T15:47:31.284Z] [LOG] [WELCOME] welcomeMessage.js loaded
+[2026-09-27T15:47:31.285Z] [LOG] [EVENTS] Loaded welcomeMessage.js → guildMemberAdd
+[2026-09-27T15:47:32.668Z] [LOG] Logged in as Astra#9406
+[2026-09-27T15:47:32.673Z] [LOG] [TICKETS] Contact Support API on http://127.0.0.1:47843/v1/support-ticket
+[2026-09-27T15:47:36.549Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:47:36.549Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:47:36.550Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:47:38.737Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:47:38.738Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:47:38.738Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:47:50.299Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:47:50.300Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:47:50.301Z] [LOG] [PREFIX] Has prefixExecute: function
+[2026-09-27T15:47:57.557Z] [LOG] [PREFIX] amayaiscool used >git
+[2026-09-27T15:47:57.558Z] [LOG] [PREFIX] Found command: YES
+[2026-09-27T15:47:57.558Z] [LOG] [PREFIX] Has prefixExecute: function
+>>>>>>> 7e45b9c8d0eed3d847e9dac6926297dc44a21be3

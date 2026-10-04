@@ -1,10 +1,19 @@
 import { Events } from "discord.js";
 import config from "../config.js";
+import { handleLauncherTicketMessage } from "../utils/tickets.js";
 
 export default {
     name: Events.MessageCreate,
 
     async execute(message, client) {
+        if (message.webhookId) {
+            const handled = await handleLauncherTicketMessage(message).catch((error) => {
+                console.error("[TICKETS] Launcher intake failed:", error);
+                return false;
+            });
+            if (handled) return;
+        }
+
         // Ignore bots
         if (message.author.bot) return;
 
