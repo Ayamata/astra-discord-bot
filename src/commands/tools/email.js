@@ -135,7 +135,8 @@ export default {
 
                 if (
                     caseChannel?.isTextBased() &&
-                    typeof caseChannel.send === "function"
+                    typeof caseChannel.send === "function" &&
+                    caseChannel.id !== message.channel.id
                 ) {
                     await caseChannel.send({
                         content:
@@ -214,7 +215,8 @@ export default {
 
                 if (
                     caseChannel?.isTextBased() &&
-                    typeof caseChannel.send === "function"
+                    typeof caseChannel.send === "function" &&
+                    caseChannel.id !== message.channel.id
                 ) {
                     await caseChannel.send({
                         content:
